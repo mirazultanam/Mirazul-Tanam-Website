@@ -283,7 +283,7 @@
       footer {
         background: var(--ink);
         color: var(--paper);
-        padding: 70px 5vw 0px;
+        padding: 70px 5vw 5rem;
         text-align: center;
       }
       footer .small {
@@ -305,9 +305,6 @@
         font-size: .75rem;
         text-transform: uppercase;
         letter-spacing: 1px;
-      }
-      footer .bottom span {
-        padding-bottom: 6px;
       }
       .contact-links {
         display: flex;
@@ -722,7 +719,7 @@
         flex-direction: column;
         justify-content: center;
         position: relative;
-        padding: 70px 3vw 0px;
+        padding: 70px 3vw 5rem;
         overflow: hidden;
       }
       footer .contact-title-wrap {
