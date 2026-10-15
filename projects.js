@@ -138,6 +138,138 @@ const projects=[
     ]
   },
   {
+    "title": "Volunteer Camp",
+    "category": "Cartoon",
+    "asset": "assets/cartoon/volunteer-camp-cover.webp",
+    "description": "Cartoon of volunteers cracking up at a camp banner while someone films — cut-out style with transparent background.",
+    "images": [
+      {
+        "src": "assets/cartoon/volunteer-camp.webp",
+        "alt": "Cartoon of two laughing volunteers in front of a Bengali banner while a phone films them",
+        "layout": "half"
+      }
+    ]
+  },
+  {
+    "title": "Safety of Helmet First",
+    "category": "Cartoon",
+    "asset": "assets/cartoon/helmet-first.webp",
+    "description": "A cyclist grateful for his helmet, mid-lesson — one-panel cartoon on road safety.",
+    "featured": true,
+    "images": [
+      {
+        "src": "assets/cartoon/helmet-first.webp",
+        "alt": "Cartoon panel of a bruised cyclist in a helmet with a speech bubble in Bengali",
+        "layout": "half"
+      }
+    ]
+  },
+  {
+    "title": "No Rent",
+    "category": "Cartoon",
+    "asset": "assets/cartoon/no-rent.webp",
+    "description": "Four-panel comic: a couple, their phones, and two very opinionated pigs commenting from the bushes.",
+    "images": [
+      {
+        "src": "assets/cartoon/no-rent.webp",
+        "alt": "Four-panel comic of a couple exchanging a phone and two pigs with speech bubbles",
+        "layout": "half"
+      }
+    ]
+  },
+  {
+    "title": "SOS",
+    "category": "Cartoon",
+    "asset": "assets/cartoon/sos.webp",
+    "description": "Comic panel: a bus with a temper, wide eyes, and someone standing in the wrong place at the wrong time.",
+    "images": [
+      {
+        "src": "assets/cartoon/sos.webp",
+        "alt": "Comic page with close-up eyes, a red bus with an angry face, and Bengali speech bubbles",
+        "layout": "half"
+      }
+    ]
+  },
+  {
+    "title": "Girl with a Flower",
+    "category": "Caricature",
+    "asset": "assets/caricature/girl-with-flower.webp",
+    "description": "Pencil portrait on toned paper — a pink flower tucked behind her ear.",
+    "images": [
+      {
+        "src": "assets/caricature/girl-with-flower.webp",
+        "alt": "Pencil portrait of a woman in profile with a pink flower in her hair",
+        "layout": "half"
+      }
+    ]
+  },
+  {
+    "title": "Jim Carrey",
+    "category": "Caricature",
+    "asset": "assets/caricature/jim-carrey.webp",
+    "description": "Graphite caricature — that grin, pushed just past the edge.",
+    "featured": true,
+    "images": [
+      {
+        "src": "assets/caricature/jim-carrey.webp",
+        "alt": "Pencil caricature of Jim Carrey with an exaggerated grin",
+        "layout": "half"
+      }
+    ]
+  },
+  {
+    "title": "Sketchbook Portrait",
+    "category": "Caricature",
+    "asset": "assets/caricature/sketchbook-portrait.webp",
+    "description": "A sketchbook page, binder clips and all — portrait study against floral paper.",
+    "images": [
+      {
+        "src": "assets/caricature/sketchbook-portrait.webp",
+        "alt": "Photo of a sketchbook page with a pencil portrait of a woman and binder clips",
+        "layout": "half"
+      }
+    ]
+  },
+  {
+    "title": "The Topknot",
+    "category": "Caricature",
+    "asset": "assets/caricature/the-topknot.webp",
+    "description": "Ballpoint caricature — spiky topknot, stubble, and a pendant, drawn with cross-hatching.",
+    "images": [
+      {
+        "src": "assets/caricature/the-topknot.webp",
+        "alt": "Ballpoint caricature of a man with a spiky topknot and stubble wearing a necklace",
+        "layout": "half"
+      }
+    ]
+  },
+  {
+    "title": "The Actor",
+    "category": "Caricature",
+    "asset": "assets/caricature/the-actor.webp",
+    "description": "Pencil caricature of a familiar face — slicked hair, stubble, and apendant stare.",
+    "images": [
+      {
+        "src": "assets/caricature/the-actor.webp",
+        "alt": "Pencil caricature of an actor with slicked-back hair and stubble",
+        "layout": "half"
+      }
+    ]
+  },
+  {
+    "title": "The Couple",
+    "category": "Caricature",
+    "asset": "assets/caricature/the-couple.webp",
+    "description": "Big-head style couple portrait in pencil — drawn as a keepsake cut-out.",
+    "images": [
+      {
+        "src": "assets/caricature/the-couple.webp",
+        "alt": "Pencil couple caricature with oversized heads on a textured gray background",
+        "layout": "half"
+      }
+    ]
+  },
+  {
     "title": "Concept art",
     "category": "Concept art",
     "asset": "assets/tower.svg",
@@ -159,32 +291,6 @@ const projects=[
       {
         "src": "assets/type.svg",
         "alt": "Graphic Design concept cover",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "Caricature",
-    "category": "Caricature",
-    "asset": "assets/caricature.svg",
-    "description": "Character and expression through exaggerated proportions. This illustrative placeholder is ready to be replaced with caricature work.",
-    "images": [
-      {
-        "src": "assets/caricature.svg",
-        "alt": "Caricature concept cover",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "Cartoon",
-    "category": "Cartoon",
-    "asset": "assets/cartoon.svg",
-    "description": "Playful characters and visual storytelling. This illustrative placeholder is ready to be replaced with cartoon work.",
-    "images": [
-      {
-        "src": "assets/cartoon.svg",
-        "alt": "Cartoon concept cover",
         "layout": "half"
       }
     ]
