@@ -966,7 +966,7 @@
       }
       #projects {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 55px 42px;
+        gap: 8rem;
         max-width: 1120px;
         margin: 0 auto;
       }
