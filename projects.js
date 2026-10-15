@@ -1,311 +1,416 @@
-// Each gallery shows only the images listed here with a non-empty src.
-// asset is the full cover path (also used in the Featured carousel).
+// Cover = asset (Animation covers are looping animated webp; video:true items are
+// muted looping mp4 players). Subfolder batches became one project each.
 // featured: true marks entries for the Featured work carousel (keep at least one).
-// Use layout: "full" for a wide image. Empty entries are ignored.
+// layout "full" spans the modal width.
 const projects=[
   {
-    "title": "Kurbani",
+    "title": "Abandoned",
+    "category": "Concept Arts",
+    "asset": "assets/concept-arts/abandoned.webp",
+    "images": [
+      { "src": "assets/concept-arts/abandoned.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Boar",
+    "category": "Concept Arts",
+    "asset": "assets/concept-arts/boar.webp",
+    "images": [
+      { "src": "assets/concept-arts/boar.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Exploration",
+    "category": "Concept Arts",
+    "asset": "assets/concept-arts/exploration.webp",
+    "images": [
+      { "src": "assets/concept-arts/exploration.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Fixation",
+    "category": "Concept Arts",
+    "asset": "assets/concept-arts/fixation-img-1190.webp",
+    "images": [
+      { "src": "assets/concept-arts/fixation-img-1190.webp", "layout": "full" },
+      { "src": "assets/concept-arts/fixation-img-4544.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Lost",
+    "category": "Concept Arts",
+    "asset": "assets/concept-arts/lost-main.webp",
+    "images": [
+      { "src": "assets/concept-arts/lost-main.webp", "layout": "full" },
+      { "src": "assets/concept-arts/lost-1.webp", "layout": "half" },
+      { "src": "assets/concept-arts/lost-2.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "The Potential",
+    "category": "Concept Arts",
+    "asset": "assets/concept-arts/the-potential.webp",
+    "images": [
+      { "src": "assets/concept-arts/the-potential.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Always, Lily",
     "category": "Illustration",
-    "asset": "assets/illustration/kurbani.webp",
-    "description": "A herdsman and his bull crossing a field of drifting clouds — a quiet take on Qurbani, devotion and provision.",
+    "asset": "assets/illustration/always-lily.webp",
+    "images": [
+      { "src": "assets/illustration/always-lily.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Bench for one, please_",
+    "category": "Illustration",
+    "asset": "assets/illustration/bench-for-one-please.webp",
+    "images": [
+      { "src": "assets/illustration/bench-for-one-please.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Ecdydid",
+    "category": "Illustration",
+    "asset": "assets/illustration/ecdydid.webp",
+    "images": [
+      { "src": "assets/illustration/ecdydid.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Female Martyrs of the July Uprising",
+    "category": "Illustration",
+    "asset": "assets/illustration/female-martyrs-of-the-july-uprising.webp",
     "featured": true,
+    "featuredRank": 1,
+    "label": "Commissioned by Ministry of Women & Children Affairs, Govt. of Bangladesh",
     "images": [
-      {
-        "src": "assets/illustration/kurbani.webp",
-        "alt": "A herdsman leading a horned bull across a grassy field against floating white clouds",
-        "layout": "full"
-      }
+      { "src": "assets/illustration/female-martyrs-of-the-july-uprising.webp", "layout": "full" }
     ]
   },
   {
-    "title": "Ferris Wheel",
+    "title": "Hey siri_",
     "category": "Illustration",
-    "asset": "assets/illustration/ferris-wheel.webp",
-    "description": "Two riders in a ferris cabin with a Klimt hanging between them — a study in looking at art instead of each other.",
+    "asset": "assets/illustration/hey-siri.webp",
+    "images": [
+      { "src": "assets/illustration/hey-siri.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Home of Homeless",
+    "category": "Illustration",
+    "asset": "assets/illustration/home-of-homeless.webp",
+    "images": [
+      { "src": "assets/illustration/home-of-homeless.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Illustration",
+    "category": "Illustration",
+    "asset": "assets/illustration/illustration.webp",
+    "images": [
+      { "src": "assets/illustration/illustration.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Indipendence",
+    "category": "Illustration",
+    "asset": "assets/illustration/indipendence.webp",
+    "images": [
+      { "src": "assets/illustration/indipendence.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "MIST",
+    "category": "Illustration",
+    "asset": "assets/illustration/mist-img-20231207-110519.webp",
+    "images": [
+      { "src": "assets/illustration/mist-img-20231207-110519.webp", "layout": "full" },
+      { "src": "assets/illustration/mist-rag-yello-grid-01.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Pretty Ferris Wheel",
+    "category": "Illustration",
+    "asset": "assets/illustration/pretty-ferris-wheel.webp",
+    "images": [
+      { "src": "assets/illustration/pretty-ferris-wheel.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Qurbani",
+    "category": "Illustration",
+    "asset": "assets/illustration/qurbani.webp",
+    "images": [
+      { "src": "assets/illustration/qurbani.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Roof and sunset",
+    "category": "Illustration",
+    "asset": "assets/illustration/roof-and-sunset.webp",
+    "images": [
+      { "src": "assets/illustration/roof-and-sunset.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "The Unwanted",
+    "category": "Illustration",
+    "asset": "assets/illustration/the-unwanted.webp",
+    "images": [
+      { "src": "assets/illustration/the-unwanted.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Vashani-Parishad",
+    "category": "Illustration",
+    "asset": "assets/illustration/vashani-parishad-6143465222871040174-121.webp",
     "featured": true,
+    "featuredRank": 6,
+    "label": "Worked For _Vashani Parishad_",
     "images": [
-      {
-        "src": "assets/illustration/ferris-wheel.webp",
-        "alt": "Two people in a round ferris wheel cabin with Klimt's The Kiss mounted between them",
-        "layout": "half"
-      }
+      { "src": "assets/illustration/vashani-parishad-6143465222871040174-121.webp", "layout": "full" },
+      { "src": "assets/illustration/vashani-parishad-img-0285.webp", "layout": "full" }
     ]
   },
   {
-    "title": "Rooftop at Dusk",
-    "category": "Illustration",
-    "asset": "assets/illustration/rooftop-dusk.webp",
-    "description": "Two figures on a rooftop as the sky burns down over the city — painted from memory of Dhaka evenings.",
-    "featured": true,
-    "images": [
-      {
-        "src": "assets/illustration/rooftop-dusk.webp",
-        "alt": "Two figures sitting on a city rooftop under an orange and blue dusk sky",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "The Boar",
-    "category": "Illustration",
-    "asset": "assets/illustration/the-boar.webp",
-    "description": "Character study of a suited boar holding court over a blood-moon table — noir menace in a red three-piece.",
-    "featured": true,
-    "images": [
-      {
-        "src": "assets/illustration/the-boar.webp",
-        "alt": "An anthropomorphic boar in a red suit sitting at a table with a moon and dripping blood",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "The Elder",
-    "category": "Illustration",
-    "asset": "assets/illustration/the-elder.webp",
-    "description": "Ink and wash: a crowd reaches through floodwater toward a glowing elder — faith and desperation in grayscale.",
-    "images": [
-      {
-        "src": "assets/illustration/the-elder.webp",
-        "alt": "Grayscale ink illustration of a bearded elder glowing above a crowd reaching through storm waves",
-        "layout": "full"
-      }
-    ]
-  },
-  {
-    "title": "After All This Time",
-    "category": "Illustration",
-    "asset": "assets/illustration/lily-always.webp",
-    "description": "A cinematic frame under the tree — 'After all this time?' 'Always.'",
-    "images": [
-      {
-        "src": "assets/illustration/lily-always.webp",
-        "alt": "Two figures facing each other under a large tree, subtitled 'Lily: After all this time? -Always'",
-        "layout": "full"
-      }
-    ]
-  },
-  {
-    "title": "Field Wanderer",
-    "category": "Illustration",
-    "asset": "assets/illustration/field-wanderer.webp",
-    "description": "Poster piece: a traveller carries a scroll through a golden field under a sky that reads 不要な — unnecessary.",
-    "images": [
-      {
-        "src": "assets/illustration/field-wanderer.webp",
-        "alt": "A cloaked traveller carrying a scroll across a golden field beneath large Japanese characters",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "Behind the Fence",
-    "category": "Illustration",
-    "asset": "assets/illustration/behind-the-fence.webp",
-    "description": "A lone figure raises the Bangladesh flag behind a spiked fence, a crowd pressed against the other side.",
-    "images": [
-      {
-        "src": "assets/illustration/behind-the-fence.webp",
-        "alt": "A silhouetted figure holding a Bangladesh flag behind an iron fence with onlookers",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "Straw Hat Samurai",
-    "category": "Illustration",
-    "asset": "assets/illustration/straw-hat-samurai.webp",
-    "description": "A ronin at rest, sword across his shoulders and cup in hand — character design exercise.",
-    "images": [
-      {
-        "src": "assets/illustration/straw-hat-samurai.webp",
-        "alt": "A seated samurai in a straw hat with a sword across his shoulders",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "The Scout",
-    "category": "Illustration",
-    "asset": "assets/illustration/the-scout.webp",
-    "description": "A sketched scout checks his phone on a stack of concrete blocks — modern explorer, loose pencil texture.",
-    "images": [
-      {
-        "src": "assets/illustration/the-scout.webp",
-        "alt": "A sketched adventurer with a large backpack checking a phone while perched on concrete blocks",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "Volunteer Camp",
-    "category": "Cartoon",
-    "asset": "assets/cartoon/volunteer-camp-cover.webp",
-    "description": "Cartoon of volunteers cracking up at a camp banner while someone films — cut-out style with transparent background.",
-    "images": [
-      {
-        "src": "assets/cartoon/volunteer-camp.webp",
-        "alt": "Cartoon of two laughing volunteers in front of a Bengali banner while a phone films them",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "Safety of Helmet First",
-    "category": "Cartoon",
-    "asset": "assets/cartoon/helmet-first.webp",
-    "description": "A cyclist grateful for his helmet, mid-lesson — one-panel cartoon on road safety.",
-    "featured": true,
-    "images": [
-      {
-        "src": "assets/cartoon/helmet-first.webp",
-        "alt": "Cartoon panel of a bruised cyclist in a helmet with a speech bubble in Bengali",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "No Rent",
-    "category": "Cartoon",
-    "asset": "assets/cartoon/no-rent.webp",
-    "description": "Four-panel comic: a couple, their phones, and two very opinionated pigs commenting from the bushes.",
-    "images": [
-      {
-        "src": "assets/cartoon/no-rent.webp",
-        "alt": "Four-panel comic of a couple exchanging a phone and two pigs with speech bubbles",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "SOS",
-    "category": "Cartoon",
-    "asset": "assets/cartoon/sos.webp",
-    "description": "Comic panel: a bus with a temper, wide eyes, and someone standing in the wrong place at the wrong time.",
-    "images": [
-      {
-        "src": "assets/cartoon/sos.webp",
-        "alt": "Comic page with close-up eyes, a red bus with an angry face, and Bengali speech bubbles",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "Girl with a Flower",
-    "category": "Caricature",
-    "asset": "assets/caricature/girl-with-flower.webp",
-    "description": "Pencil portrait on toned paper — a pink flower tucked behind her ear.",
-    "images": [
-      {
-        "src": "assets/caricature/girl-with-flower.webp",
-        "alt": "Pencil portrait of a woman in profile with a pink flower in her hair",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "Jim Carrey",
-    "category": "Caricature",
-    "asset": "assets/caricature/jim-carrey.webp",
-    "description": "Graphite caricature — that grin, pushed just past the edge.",
-    "featured": true,
-    "images": [
-      {
-        "src": "assets/caricature/jim-carrey.webp",
-        "alt": "Pencil caricature of Jim Carrey with an exaggerated grin",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "Sketchbook Portrait",
-    "category": "Caricature",
-    "asset": "assets/caricature/sketchbook-portrait.webp",
-    "description": "A sketchbook page, binder clips and all — portrait study against floral paper.",
-    "images": [
-      {
-        "src": "assets/caricature/sketchbook-portrait.webp",
-        "alt": "Photo of a sketchbook page with a pencil portrait of a woman and binder clips",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "The Topknot",
-    "category": "Caricature",
-    "asset": "assets/caricature/the-topknot.webp",
-    "description": "Ballpoint caricature — spiky topknot, stubble, and a pendant, drawn with cross-hatching.",
-    "images": [
-      {
-        "src": "assets/caricature/the-topknot.webp",
-        "alt": "Ballpoint caricature of a man with a spiky topknot and stubble wearing a necklace",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "The Actor",
-    "category": "Caricature",
-    "asset": "assets/caricature/the-actor.webp",
-    "description": "Pencil caricature of a familiar face — slicked hair, stubble, and apendant stare.",
-    "images": [
-      {
-        "src": "assets/caricature/the-actor.webp",
-        "alt": "Pencil caricature of an actor with slicked-back hair and stubble",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "The Couple",
-    "category": "Caricature",
-    "asset": "assets/caricature/the-couple.webp",
-    "description": "Big-head style couple portrait in pencil — drawn as a keepsake cut-out.",
-    "images": [
-      {
-        "src": "assets/caricature/the-couple.webp",
-        "alt": "Pencil couple caricature with oversized heads on a textured gray background",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "Concept art",
-    "category": "Concept art",
-    "asset": "assets/tower.svg",
-    "description": "Imagined spaces, visual worlds, and early ideas. This concept cover is a placeholder for concept art projects.",
-    "images": [
-      {
-        "src": "assets/tower.svg",
-        "alt": "Concept art concept cover",
-        "layout": "half"
-      }
-    ]
-  },
-  {
-    "title": "Graphic Design",
+    "title": "Automobile Business",
     "category": "Graphic Design",
-    "asset": "assets/type.svg",
-    "description": "Typography, color, and visual communication. This concept cover is a placeholder for graphic design projects.",
+    "asset": "assets/graphic-design/automobile-business-2.webp",
     "images": [
-      {
-        "src": "assets/type.svg",
-        "alt": "Graphic Design concept cover",
-        "layout": "half"
-      }
+      { "src": "assets/graphic-design/automobile-business-2.webp", "layout": "full" },
+      { "src": "assets/graphic-design/automobile-business-army-01.webp", "layout": "full" },
+      { "src": "assets/graphic-design/automobile-business-axio.webp", "layout": "full" },
+      { "src": "assets/graphic-design/automobile-business-eid-al-fitr-2026.webp", "layout": "half" },
+      { "src": "assets/graphic-design/automobile-business-honda.webp", "layout": "half" },
+      { "src": "assets/graphic-design/automobile-business-insight-baridhara-mosque-copy.webp", "layout": "half" },
+      { "src": "assets/graphic-design/automobile-business-insight-1.webp", "layout": "full" },
+      { "src": "assets/graphic-design/automobile-business-insight.webp", "layout": "full" }
     ]
   },
   {
-    "title": "Architecture",
-    "category": "Architecture",
-    "asset": "assets/space.svg",
-    "description": "Spatial thinking through mass, light, and structure. This concept cover is a placeholder for architectural drawings and project documentation.",
+    "title": "Bihanga Puran",
+    "category": "Graphic Design",
+    "asset": "assets/graphic-design/bihanga-puran.webp",
+    "featured": true,
+    "featuredRank": 5,
+    "label": "Featured in _Bihanga Puran - A Non-political Film About Birds",
     "images": [
-      {
-        "src": "assets/space.svg",
-        "alt": "Architecture concept cover",
-        "layout": "half"
-      }
+      { "src": "assets/graphic-design/bihanga-puran.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Deep Cut",
+    "category": "Graphic Design",
+    "asset": "assets/graphic-design/deep-cut-byomkesh.webp",
+    "images": [
+      { "src": "assets/graphic-design/deep-cut-byomkesh.webp", "layout": "full" },
+      { "src": "assets/graphic-design/deep-cut-free-132.webp", "layout": "full" },
+      { "src": "assets/graphic-design/deep-cut-jawan-mdfs.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Dhaka nitro Cover 3-01",
+    "category": "Graphic Design",
+    "asset": "assets/graphic-design/dhaka-nitro-cover-3-01.webp",
+    "images": [
+      { "src": "assets/graphic-design/dhaka-nitro-cover-3-01.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "independence day 2026 copy",
+    "category": "Graphic Design",
+    "asset": "assets/graphic-design/independence-day-2026-copy.webp",
+    "images": [
+      { "src": "assets/graphic-design/independence-day-2026-copy.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "MISTDS",
+    "category": "Graphic Design",
+    "asset": "assets/graphic-design/mistds-pre-reg-form.webp",
+    "images": [
+      { "src": "assets/graphic-design/mistds-pre-reg-form.webp", "layout": "half" },
+      { "src": "assets/graphic-design/mistds-workshop.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Mohiner ghora ghash khay 1",
+    "category": "Graphic Design",
+    "asset": "assets/graphic-design/mohiner-ghora-ghash-khay-1.webp",
+    "images": [
+      { "src": "assets/graphic-design/mohiner-ghora-ghash-khay-1.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Studio Dhaanch",
+    "category": "Graphic Design",
+    "asset": "assets/graphic-design/studio-dhaanch-3.webp",
+    "images": [
+      { "src": "assets/graphic-design/studio-dhaanch-3.webp", "layout": "full" },
+      { "src": "assets/graphic-design/studio-dhaanch-exhibition-list-october.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Jim Carey",
+    "category": "Caricatures and Portraits",
+    "asset": "assets/caricatures-and-portraits/jim-carey.webp",
+    "images": [
+      { "src": "assets/caricatures-and-portraits/jim-carey.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "leo dicaprio",
+    "category": "Caricatures and Portraits",
+    "asset": "assets/caricatures-and-portraits/leo-dicaprio.webp",
+    "images": [
+      { "src": "assets/caricatures-and-portraits/leo-dicaprio.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Oishy Sarjil",
+    "category": "Caricatures and Portraits",
+    "asset": "assets/caricatures-and-portraits/oishy-sarjil.webp",
+    "images": [
+      { "src": "assets/caricatures-and-portraits/oishy-sarjil.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Safwan and Konthy",
+    "category": "Caricatures and Portraits",
+    "asset": "assets/caricatures-and-portraits/safwan-and-konthy.webp",
+    "images": [
+      { "src": "assets/caricatures-and-portraits/safwan-and-konthy.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Sketchbook Portraits",
+    "category": "Caricatures and Portraits",
+    "asset": "assets/caricatures-and-portraits/sketchbook-portraits-1703076776788.webp",
+    "images": [
+      { "src": "assets/caricatures-and-portraits/sketchbook-portraits-1703076776788.webp", "layout": "half" },
+      { "src": "assets/caricatures-and-portraits/sketchbook-portraits-img-cpr.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Equality 01_",
+    "category": "Cartoon",
+    "asset": "assets/cartoon/equality-01.webp",
+    "featured": true,
+    "featuredRank": 2,
+    "label": "Exhibited and Featured in _Cartoons for Equality_ Prevent Violence against Women and Girls",
+    "images": [
+      { "src": "assets/cartoon/equality-01.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Equality 02",
+    "category": "Cartoon",
+    "asset": "assets/cartoon/equality-02.webp",
+    "images": [
+      { "src": "assets/cartoon/equality-02.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Extortion_",
+    "category": "Cartoon",
+    "asset": "assets/cartoon/extortion.webp",
+    "images": [
+      { "src": "assets/cartoon/extortion.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Moving Forward",
+    "category": "Cartoon",
+    "asset": "assets/cartoon/moving-forward.webp",
+    "images": [
+      { "src": "assets/cartoon/moving-forward.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Rosh+Alo",
+    "category": "Cartoon",
+    "asset": "assets/cartoon/rosh-alo.webp",
+    "featured": true,
+    "featuredRank": 4,
+    "label": "Featured _Rosh+Alo_",
+    "images": [
+      { "src": "assets/cartoon/rosh-alo.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Safety of Helmet",
+    "category": "Cartoon",
+    "asset": "assets/cartoon/safety-of-helmet.webp",
+    "featured": true,
+    "featuredRank": 3,
+    "label": "Exhibited and Featured in _Safe থাকি, Safe রাখি (Safe Thaki, Safe Rakhi)_ Exhibition",
+    "images": [
+      { "src": "assets/cartoon/safety-of-helmet.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Wrong place, Wrong time",
+    "category": "Cartoon",
+    "asset": "assets/cartoon/wrong-place-wrong-time.webp",
+    "images": [
+      { "src": "assets/cartoon/wrong-place-wrong-time.webp", "layout": "half" }
+    ]
+  },
+  {
+    "title": "Hospital at Surma",
+    "category": "Architectural Illustration",
+    "asset": "assets/architectural-illustration/hospital-at-surma-2.webp",
+    "images": [
+      { "src": "assets/architectural-illustration/hospital-at-surma-2.webp", "layout": "full" },
+      { "src": "assets/architectural-illustration/hospital-at-surma-21.webp", "layout": "full" },
+      { "src": "assets/architectural-illustration/hospital-at-surma-22.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Housing at sylhet",
+    "category": "Architectural Illustration",
+    "asset": "assets/architectural-illustration/housing-at-sylhet.webp",
+    "images": [
+      { "src": "assets/architectural-illustration/housing-at-sylhet.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "The SM Barrack",
+    "category": "Architectural Illustration",
+    "asset": "assets/architectural-illustration/the-sm-barrack-31.webp",
+    "images": [
+      { "src": "assets/architectural-illustration/the-sm-barrack-31.webp", "layout": "full" },
+      { "src": "assets/architectural-illustration/the-sm-barrack-abcd.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "TNT officials_ Housing at Motijheel",
+    "category": "Architectural Illustration",
+    "asset": "assets/architectural-illustration/tnt-officials-housing-at-motijheel-1.webp",
+    "images": [
+      { "src": "assets/architectural-illustration/tnt-officials-housing-at-motijheel-1.webp", "layout": "full" },
+      { "src": "assets/architectural-illustration/tnt-officials-housing-at-motijheel-11.webp", "layout": "full" },
+      { "src": "assets/architectural-illustration/tnt-officials-housing-at-motijheel-12.webp", "layout": "full" }
+    ]
+  },
+  {
+    "title": "Commissioned Motion Graphics",
+    "category": "Animation",
+    "asset": "assets/animation/commissioned-motion-graphics-52-lacs-rav4-cover.webp",
+    "images": [
+      { "src": "assets/animation/commissioned-motion-graphics-52-lacs-rav4.mp4", "video": true, "layout": "half" },
+      { "src": "assets/animation/commissioned-motion-graphics-comp-1.mp4", "video": true, "layout": "half" },
+      { "src": "assets/animation/commissioned-motion-graphics-insight-12-sec-with-music.mp4", "video": true, "layout": "half" }
+    ]
+  },
+  {
+    "title": "Frame by Frame",
+    "category": "Animation",
+    "asset": "assets/animation/frame-by-frame-cover.webp",
+    "images": [
+      { "src": "assets/animation/frame-by-frame.mp4", "video": true, "layout": "full" }
     ]
   }
 ];

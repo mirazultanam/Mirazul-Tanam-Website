@@ -70,32 +70,26 @@
       >
         <h2>Featured work</h2>
         <div class="carousel-stage" id="carousel-stage"></div>
-        <div class="carousel-controls">
-          <button id="carousel-prev" aria-label="Previous project">←</button
-          ><span
-            id="carousel-status"
-            aria-live="polite"
-            aria-atomic="true"
-          ></span
-          ><button id="carousel-next" aria-label="Next project">→</button>
-        </div>
+        <span id="carousel-status" aria-live="polite" aria-atomic="true"></span>
       </section>
       <section id="work" class="work">
         <div class="section-head">
           <h2>All Works</h2>
         </div>
         <div class="filters" aria-label="Filter projects">
-          <button aria-pressed="false" data-filter="Concept art">
-            Concept art</button
+          <button aria-pressed="false" data-filter="Concept Arts">
+            Concept Arts</button
           ><button aria-pressed="false" data-filter="Illustration">
             Illustration</button
           ><button aria-pressed="false" data-filter="Graphic Design">
             Graphic Design</button
-          ><button aria-pressed="false" data-filter="Caricature">
-            Caricature</button
+          ><button aria-pressed="false" data-filter="Caricatures and Portraits">
+            Caricatures and Portraits</button
           ><button aria-pressed="false" data-filter="Cartoon">Cartoon</button
-          ><button aria-pressed="false" data-filter="Architecture">
-            Architecture
+          ><button aria-pressed="false" data-filter="Architectural Illustration">
+            Architectural Illustration</button
+          ><button aria-pressed="false" data-filter="Animation">
+            Animation
           </button>
         </div>
         <div class="grid" id="projects"></div>
@@ -103,7 +97,7 @@
       <section class="about-teaser">
         <a href="about.html"
           >Different mediums.<br />Same curiosity.
-          <span aria-hidden="true">↗</span><small>Get to know me</small></a
+<small>Get to know me</small></a
         >
       </section>
     </main>
@@ -112,13 +106,13 @@
       <div class="contact-title-wrap"><h2>CONTACT</h2></div>
       <p>Reach me here:</p>
       <nav class="contact-links" aria-label="Contact links">
-        <a href="#">Gmail ↗</a><a href="#">Instagram ↗</a
-        ><a href="#">Facebook ↗</a>
+        <a href="#">Gmail</a><a href="#">Instagram</a
+        ><a href="#">Facebook</a>
       </nav>
       <div class="bottom">
         <span>© <span id="year"></span> Mirazul Tanam</span>
         <span>Made with curiosity.</span>
-        <a href="about.html">More about me ↗</a>
+        <a href="about.html">More about me</a>
       </div>
     </footer>
     <div class="palette" aria-label="Choose a color theme">
@@ -156,11 +150,9 @@
         <div class="project-heading">
           <span class="tag" id="modal-category"></span>
           <h2 id="modal-title"></h2>
-          <p id="modal-description"></p>
         </div>
         <div class="modal-gallery" id="modal-gallery"></div>
         <div class="gallery-end">
-          <p>Concept artwork</p>
           <button class="modal-back">← Back to All Works</button>
         </div>
       </div>
