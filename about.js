@@ -1,0 +1,2 @@
+function setTheme(theme){if(!['default','purple','green','dark'].includes(theme))theme='default';document.body.dataset.theme=theme;document.querySelectorAll('button[data-theme]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===theme)));try{localStorage.setItem('portfolio-theme',theme)}catch{}}
+document.querySelectorAll('button[data-theme]').forEach(b=>b.addEventListener('click',()=>setTheme(b.dataset.theme)));try{setTheme(localStorage.getItem('portfolio-theme')||'default')}catch{}document.querySelector('#year').textContent=new Date().getFullYear();

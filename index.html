@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f4f2e9" />
+    <meta
+      name="description"
+      content="Mirazul Tanam — architecture student, visual designer, and creative producer based in Bangladesh."
+    />
+    <title>Mirazul Tanam — Selected Work</title>
+    <style>
+      @font-face {
+        font-family: Headline;
+        src: url("assets/headline-semibold.ttf");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+      body {
+        --paper: #f4f2e9;
+        --ink: #292b26;
+        --accent: #d9f777;
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Arial, sans-serif;
+        transition:
+          background 0.35s,
+          color 0.35s;
+      }
+      body[data-theme="purple"] {
+        --paper: #c3b4ef;
+        --ink: #342955;
+        --accent: #f5aa69;
+      }
+      body[data-theme="green"] {
+        --paper: #d9f777;
+        --ink: #244738;
+        --accent: #f5b9cd;
+      }
+      body[data-theme="dark"] {
+        --paper: #252c29;
+        --ink: #f4f2e9;
+        --accent: #c9abf1;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+      }
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+      button:focus-visible,
+      a:focus-visible {
+        outline: 3px solid #f47846;
+        outline-offset: 5px;
+      }
+      header {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 25px 34px;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      .brand {
+        font-family: Headline;
+        font-size: 28px;
+        letter-spacing: 0;
+      }
+      .round {
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        width: 43px;
+        height: 43px;
+        background: transparent;
+        display: grid;
+        place-items: center;
+        font-size: 21px;
+      }
+      .hero {
+        min-height: 890px;
+        height: 100svh;
+        max-height: 1150px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 20px 65px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 10px;
+        font-weight: 700;
+        margin-bottom: 32px;
+      }
+      .hero h1 {
+        font:
+          600 clamp(100px, 19vw, 290px)/0.92 Headline,
+          sans-serif;
+        letter-spacing: 0.005em;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+      }
+      .hero h1 span {
+        display: block;
+      }
+      .stickers {
+        height: 140px;
+        display: flex;
+        justify-content: center;
+        margin: -20px 0 28px;
+        z-index: 2;
+      }
+      .sticker {
+        width: 150px;
+        height: 155px;
+        padding: 0;
+        border: 7px solid var(--paper);
+        box-shadow: 0 14px 25px #0002;
+        transform: rotate(var(--r));
+        transition: transform 0.4s;
+        border-radius: 3px;
+        background: var(--paper);
+        margin: 0 -9px;
+        overflow: hidden;
+      }
+      .sticker img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .sticker:hover {
+        transform: translateY(-25px) rotate(0) scale(1.1);
+        z-index: 2;
+      }
+      .intro {
+        font: 600 clamp(24px, 3vw, 43px)/0.95 Headline;
+        text-transform: uppercase;
+        max-width: 510px;
+        margin: 12px 0 14px;
+      }
+      .location {
+        font-size: 12px;
+      }
+      .hero-bottom {
+        position: absolute;
+        bottom: 30px;
+        left: 34px;
+        right: 34px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+      .hero-bottom a {
+        font-size: 12px;
+      }
+      .work {
+        padding: 110px 5vw 80px;
+      }
+      .section-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin-bottom: 45px;
+      }
+      .section-head h2,
+      .about h2 {
+        font: 600 clamp(60px, 8vw, 120px)/1 Headline;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .section-head p {
+        font-size: 13px;
+        max-width: 220px;
+        line-height: 1.5;
+      }
+      .filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 26px;
+      }
+      .filters button {
+        border: 1px solid currentColor;
+        background: transparent;
+        padding: 10px 18px;
+        border-radius: 30px;
+        font-size: 12px;
+      }
+      .filters button[aria-pressed="true"] {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 55px 25px;
+      }
+      .project {
+        text-align: left;
+        border: 0;
+        background: transparent;
+        padding: 0;
+        min-width: 0;
+      }
+      .project[hidden] {
+        display: none;
+      }
+      .cover {
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        aspect-ratio: 1.25;
+      }
+      .cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s;
+      }
+      .project:hover img {
+        transform: scale(1.045);
+      }
+      .view {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        border-radius: 40px;
+        padding: 13px 18px;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 12px;
+        transform: translateY(75px);
+        transition: transform 0.3s;
+      }
+      .project:hover .view,
+      .project:focus-visible .view {
+        transform: translateY(0);
+      }
+      .caption {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: baseline;
+        margin-top: 15px;
+      }
+      .caption h3 {
+        font: 600 31px/1 Headline;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .caption span {
+        font-size: 10px;
+      }
+      .note {
+        font-size: 11px;
+        line-height: 1.6;
+        margin-top: 35px;
+        opacity: 0.65;
+      }
+      .about {
+        padding: 100px 8vw 130px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        border-top: 1px solid color-mix(in srgb, var(--ink), transparent 80%);
+      }
+      .about p {
+        font-size: 20px;
+        line-height: 1.55;
+        margin: 0 0 28px;
+      }
+      .disciplines {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .disciplines span {
+        font-size: 11px;
+        border-bottom: 1px solid;
+        padding: 10px 0;
+        margin-right: 16px;
+      }
+      footer {
+        background: var(--ink);
+        color: var(--paper);
+        padding: 70px 5vw 28px;
+        text-align: center;
+      }
+      footer .small {
+        font-size: 12px;
+      }
+      footer h2 {
+        font: 600 clamp(75px, 18vw, 280px)/1 Headline;
+        letter-spacing: 0.01em;
+        margin: 30px 0;
+      }
+      footer p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      footer .bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 70px;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 26px;
+        font-size: 13px;
+      }
+      .contact-links a {
+        padding: 10px 4px;
+      }
+      .contact-links a:hover {
+        text-decoration: underline;
+      }
+      .palette {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 4;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px;
+        border-radius: 35px;
+        background: var(--paper);
+        box-shadow: 0 3px 20px #0002;
+        border: 1px solid #8883;
+      }
+      .palette button {
+        width: 21px;
+        height: 21px;
+        border-radius: 50%;
+        border: 1px solid #0004;
+        padding: 0;
+      }
+      .palette button[aria-pressed="true"] {
+        outline: 1px solid var(--ink);
+        outline-offset: 3px;
+      }
+      .palette span {
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 10px;
+        transition:
+          max-width 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+          opacity 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .palette:hover span,
+      .palette:focus-within span {
+        max-width: 10em;
+        opacity: 1;
+      }
+      dialog {
+        max-width: 900px;
+        width: 92vw;
+        border: 0;
+        padding: 0;
+        background: var(--paper);
+        color: var(--ink);
+        border-radius: 8px;
+        max-height: 90svh;
+      }
+      dialog::backdrop {
+        background: #101510bd;
+        backdrop-filter: blur(7px);
+      }
+      .modal-close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        border: 0;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        font-size: 25px;
+        background: var(--paper);
+      }
+      dialog img {
+        width: 100%;
+        max-height: 48vh;
+        object-fit: cover;
+      }
+      dialog .detail {
+        padding: 30px;
+      }
+      dialog h2 {
+        font: 600 50px/1 Headline;
+        text-transform: uppercase;
+        margin: 0 0 15px;
+      }
+      dialog p {
+        line-height: 1.65;
+        max-width: 650px;
+      }
+      .tag {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .modal-open {
+        overflow: hidden;
+      }
+      @media (min-width: 1500px) {
+        .work,
+        .about {
+          max-width: 1600px;
+          margin: auto;
+        }
+      }
+      @media (max-width: 650px) {
+        header {
+          padding: 20px;
+        }
+        .hero {
+          min-height: 730px;
+          max-height: 900px;
+        }
+        .hero h1 {
+          font-size: 26vw;
+        }
+        .stickers {
+          height: 110px;
+          margin: -5px 0 27px;
+        }
+        .sticker {
+          width: 100px;
+          height: 110px;
+          border-width: 5px;
+        }
+        .intro {
+          font-size: 31px;
+          max-width: 310px;
+        }
+        .hero-bottom {
+          left: 20px;
+          right: 20px;
+        }
+        .hero-bottom span {
+          max-width: 150px;
+          text-align: left;
+          line-height: 1.5;
+        }
+        .work {
+          padding: 70px 20px;
+        }
+        .section-head {
+          display: block;
+        }
+        .section-head p {
+          margin-top: 20px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .caption h3 {
+          font-size: 29px;
+        }
+        .about {
+          padding: 65px 24px;
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        .about p {
+          font-size: 18px;
+        }
+        footer .bottom {
+          margin-bottom: 50px;
+          gap: 20px;
+          text-align: left;
+        }
+        .eyebrow {
+          font-size: 9px;
+        }
+        .view {
+          transform: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          transition: none !important;
+        }
+      }
+
+      .hero h1 {
+        font-size: clamp(100px, 18vw, 270px);
+      }
+      .caption h3,
+      .intro,
+      dialog h2 {
+        letter-spacing: 0.015em;
+      }
+      .stickers {
+        margin-top: 3px;
+      }
+      .hero {
+        min-height: 940px;
+      }
+      .sticker {
+        animation: arrive-wiggle 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        animation-delay: 0.15s;
+      }
+      .sticker:nth-child(2) {
+        animation-delay: 0.28s;
+      }
+      .sticker:nth-child(3) {
+        animation-delay: 0.41s;
+      }
+      .sticker img {
+        transition: transform 0.5s;
+      }
+      .sticker:hover img {
+        transform: rotate(-5deg) scale(1.09);
+      }
+      @keyframes arrive-wiggle {
+        0% {
+          opacity: 0;
+          transform: translateY(65px) rotate(calc(var(--r) - 25deg)) scale(0.75);
+        }
+        40% {
+          opacity: 1;
+          transform: translateY(-18px) rotate(calc(var(--r) + 12deg))
+            scale(1.05);
+        }
+        65% {
+          transform: translateY(5px) rotate(calc(var(--r) - 8deg));
+        }
+        82% {
+          transform: translateY(-3px) rotate(calc(var(--r) + 4deg));
+        }
+        100% {
+          transform: translateY(0) rotate(var(--r));
+        }
+      }
+      .featured {
+        padding: 80px 0 75px;
+        overflow: hidden;
+        text-align: center;
+      }
+      .featured h2 {
+        font: 600 clamp(46px, 5vw, 74px)/1 Headline;
+        text-transform: uppercase;
+        letter-spacing: 0.015em;
+        margin: 0 0 10px;
+      }
+      .featured > p {
+        font-size: 14px;
+        margin: 0 20px 35px;
+      }
+      .carousel-stage {
+        position: relative;
+        height: clamp(300px, 43vw, 600px);
+        touch-action: pan-y;
+        max-width: 1800px;
+        margin: auto;
+      }
+      .slide {
+        position: absolute;
+        left: 50%;
+        top: 25px;
+        width: clamp(240px, 35vw, 480px);
+        padding: 0;
+        border: 0;
+        background: transparent;
+        transition:
+          transform 0.65s cubic-bezier(0.2, 0.75, 0.2, 1),
+          opacity 0.5s;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-50%) scale(0.8);
+      }
+      .slide img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 14px;
+        box-shadow: 0 15px 25px #0000000a;
+      }
+      .slide .slide-label {
+        display: inline-block;
+        background: var(--accent);
+        color: var(--ink);
+        font: 600 19px/1.2 Headline;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        padding: 12px 22px;
+        border-radius: 30px;
+        margin-top: 18px;
+      }
+      .slide.active {
+        opacity: 1;
+        transform: translateX(-50%);
+        z-index: 2;
+        pointer-events: auto;
+      }
+      .slide.previous {
+        opacity: 1;
+        transform: translateX(-183%) translateY(40px) rotate(-14deg);
+        z-index: 1;
+        pointer-events: auto;
+      }
+      .slide.next {
+        opacity: 1;
+        transform: translateX(83%) translateY(40px) rotate(14deg);
+        z-index: 1;
+        pointer-events: auto;
+      }
+      .slide:not(.active) .slide-label {
+        opacity: 0;
+      }
+      .carousel-controls {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+      }
+      .carousel-controls button {
+        width: 45px;
+        height: 45px;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        background: transparent;
+        font-size: 22px;
+      }
+      .carousel-controls button:hover {
+        background: var(--accent);
+      }
+      #carousel-status {
+        font-size: 12px;
+        min-width: 50px;
+      }
+      .carousel-hint {
+        font-size: 11px;
+        opacity: 0.65;
+        margin-top: 18px;
+      }
+      .work {
+        padding-top: 65px;
+      }
+      @media (max-width: 650px) {
+        .hero {
+          min-height: 800px;
+        }
+        .hero h1 {
+          font-size: 25vw;
+        }
+        .featured {
+          padding-top: 45px;
+        }
+        .carousel-stage {
+          height: 370px;
+        }
+        .slide {
+          width: 67vw;
+          max-width: 300px;
+        }
+        .slide.previous {
+          transform: translateX(-158%) translateY(30px) rotate(-12deg);
+        }
+        .slide.next {
+          transform: translateX(58%) translateY(30px) rotate(12deg);
+        }
+        .carousel-controls {
+          margin-top: 0;
+        }
+        .stickers {
+          margin-top: 10px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .sticker {
+          animation: none !important;
+        }
+      }
+
+      header .brand {
+        position: fixed;
+        left: 34px;
+        top: 25px;
+        z-index: 8;
+      }
+      header .about-button {
+        position: fixed;
+        right: 26px;
+        top: 20px;
+        background: var(--paper);
+        box-shadow: 0 6px 22px #0002;
+        z-index: 8;
+        transition: transform 0.3s;
+      }
+      header .about-button:hover {
+        transform: rotate(-10deg) scale(1.08);
+      }
+      .about-teaser {
+        padding: 100px 25px 120px;
+        text-align: center;
+        border-top: 1px solid #8883;
+      }
+      .about-teaser .eyebrow {
+        display: block;
+      }
+      .about-teaser > a {
+        display: block;
+        font: 600 clamp(42px, 7vw, 100px)/1.08 Headline;
+        letter-spacing: 0.01em;
+      }
+      .about-teaser small {
+        display: block;
+        font: 12px/1.5 Arial;
+        margin-top: 25px;
+      }
+      .about-teaser > a:hover > span {
+        display: inline-block;
+        transform: translate(5px, -5px);
+      }
+      footer {
+        min-height: 90svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        padding: 70px 3vw 30px;
+        overflow: hidden;
+      }
+      footer .contact-title-wrap {
+        transform-origin: center bottom;
+        will-change: transform;
+        margin: 25px 0;
+      }
+      footer h2 {
+        font-size: clamp(84px, 24vw, 380px);
+        line-height: 0.9;
+        letter-spacing: 0.015em;
+        margin: 0;
+        transform-origin: center bottom;
+      }
+      footer .bottom {
+        width: 100%;
+        margin-top: 60px;
+      }
+      footer.contact-pop h2 {
+        animation: contact-spring 1s both cubic-bezier(0.22, 0.7, 0.25, 1);
+      }
+      @keyframes contact-spring {
+        0% {
+          transform: scaleY(0.55) scaleX(1.035);
+        }
+        45% {
+          transform: scaleY(1.09) scaleX(0.98);
+        }
+        68% {
+          transform: scaleY(0.95) scaleX(1.01);
+        }
+        85% {
+          transform: scaleY(1.025);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .about-page {
+        padding: 155px 25px 110px;
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+      }
+      .about-page h1 {
+        font: 600 clamp(40px, 5vw, 65px)/1 Headline;
+        letter-spacing: 0.02em;
+        margin: 0 0 60px;
+      }
+      .about-statement {
+        font: 600 clamp(32px, 4.4vw, 65px)/1.12 Headline;
+        letter-spacing: 0.012em;
+        text-transform: uppercase;
+        margin: 0 auto 60px;
+        max-width: 770px;
+      }
+      .about-statement.secondary {
+        opacity: 0.62;
+      }
+      .about-page .disciplines {
+        justify-content: center;
+        margin: 35px 0;
+      }
+      .back-work {
+        display: inline-block;
+        padding: 15px 25px;
+        border: 1px solid currentColor;
+        border-radius: 35px;
+        font-size: 13px;
+      }
+      .back-work:hover {
+        background: var(--accent);
+      }
+      .about-art {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        margin: 55px 0 65px;
+      }
+      .about-art img {
+        width: 28%;
+        max-width: 180px;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 5px;
+        transform: rotate(-8deg);
+      }
+      .about-art img:nth-child(2) {
+        transform: rotate(7deg);
+      }
+      .about-art img:nth-child(3) {
+        transform: rotate(-4deg);
+      }
+      @media (max-width: 650px) {
+        header .brand {
+          left: 20px;
+          top: 20px;
+        }
+        header .about-button {
+          right: 18px;
+          top: 14px;
+        }
+        footer {
+          min-height: 75svh;
+          padding-top: 60px;
+        }
+        footer .bottom {
+          margin-top: 45px;
+        }
+        .about-page {
+          padding-top: 130px;
+        }
+        .about-page h1 {
+          margin-bottom: 45px;
+        }
+        .about-statement {
+          margin-bottom: 40px;
+        }
+        .about-teaser {
+          padding: 70px 20px 85px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        footer .contact-title-wrap {
+          transform: none !important;
+        }
+        footer.contact-pop h2 {
+          animation: none !important;
+        }
+      }
+
+      /* Full-page project galleries: paired images and full-width artwork. */
+      #project-modal {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        height: 100dvh;
+        max-height: none;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        background: var(--paper);
+        color: var(--ink);
+      }
+      #project-modal::backdrop {
+        background: var(--paper);
+        backdrop-filter: none;
+      }
+      #project-modal[open] {
+        animation: gallery-enter 0.3s ease-out;
+      }
+      @keyframes gallery-enter {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      #project-modal .modal-close {
+        position: fixed;
+        right: 25px;
+        top: 22px;
+        width: 48px;
+        height: 48px;
+        z-index: 10;
+        background: var(--paper);
+        color: var(--ink);
+        border: 1px solid color-mix(in srgb, var(--ink), transparent 75%);
+        box-shadow: 0 6px 22px #0001;
+        transition: transform 0.25s;
+      }
+      #project-modal .modal-close:hover {
+        transform: rotate(90deg);
+      }
+      .project-page {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 100px 36px 65px;
+      }
+      .project-heading {
+        text-align: center;
+        margin: 0 auto 65px;
+        max-width: 520px;
+      }
+      .project-heading .tag {
+        display: block;
+        opacity: 0.55;
+        margin-bottom: 14px;
+      }
+      #project-modal h2 {
+        font:
+          600 clamp(46px, 5vw, 76px)/1.05 Headline,
+          Arial,
+          sans-serif;
+        letter-spacing: 0.01em;
+        margin: 0 0 18px;
+      }
+      #project-modal .project-heading p {
+        font:
+          15px/1.5 Arial,
+          sans-serif;
+        opacity: 0.65;
+        margin: 0 auto;
+        max-width: 410px;
+      }
+      .modal-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        align-items: start;
+      }
+      .gallery-item {
+        margin: 0;
+        min-width: 0;
+        overflow: hidden;
+        border-radius: 14px;
+      }
+      .gallery-wide {
+        grid-column: 1/-1;
+      }
+      #project-modal .gallery-item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        border-radius: 14px;
+      }
+      .gallery-item figcaption {
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 12px 0 5px;
+        opacity: 0.65;
+      }
+
+      .gallery-end {
+        text-align: center;
+        padding: 65px 0 15px;
+      }
+      .gallery-end p {
+        font-size: 11px !important;
+        opacity: 0.55;
+        margin: 0 auto 24px;
+      }
+      .modal-back {
+        border: 1px solid currentColor;
+        background: transparent;
+        border-radius: 30px;
+        padding: 14px 24px;
+        font-size: 13px;
+      }
+      .modal-back:hover {
+        background: var(--accent);
+      }
+      #projects {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 55px 42px;
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+      #projects .cover {
+        aspect-ratio: 1;
+        border-radius: 12px;
+        box-shadow: 0 16px 30px #00000012;
+      }
+      #projects .caption {
+        display: block;
+        text-align: center;
+      }
+      #projects .caption h3 {
+        font-size: 27px;
+        margin-bottom: 7px;
+      }
+      #projects .caption span {
+        opacity: 0.6;
+      }
+      #projects .view {
+        bottom: 14px;
+        right: 14px;
+      }
+      @media (max-width: 850px) {
+        #projects {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 35px 22px;
+        }
+        .project-page {
+          padding: 95px 24px 50px;
+        }
+      }
+      @media (max-width: 550px) {
+        .project-page {
+          padding: 90px 18px 35px;
+        }
+        .project-heading {
+          margin-bottom: 38px;
+        }
+        .modal-gallery {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+        .gallery-wide {
+          grid-column: auto;
+        }
+        #project-modal .modal-close {
+          right: 16px;
+          top: 16px;
+          width: 42px;
+          height: 42px;
+        }
+        #projects {
+          gap: 30px 15px;
+        }
+        #projects .caption h3 {
+          font-size: 22px;
+        }
+        #projects .caption span {
+          font-size: 9px;
+        }
+        #projects .view {
+          font-size: 10px;
+          padding: 9px 12px;
+        }
+        #project-modal .project-heading p {
+          font-size: 14px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #project-modal[open] {
+          animation: none;
+        }
+      }
+      .modal-gallery .gallery-item:only-child {
+        grid-column: 1/-1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="#" aria-label="Home">MT.</a
+      ><a
+        href="about.html"
+        class="round about-button"
+        aria-label="About me"
+        title="About me"
+        ><svg
+          viewBox="0 0 32 32"
+          width="25"
+          height="25"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <circle cx="16" cy="16" r="13" />
+          <path
+            d="M8 26c1-7 15-7 16 0M11 12a5 5 0 0 1 10 0v3a5 5 0 0 1-10 0z"
+          />
+          <path d="M10 11q6-9 12 0" /></svg
+      ></a>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>MIRAZUL<span>TANAM</span></h1>
+        <div class="stickers">
+          <a
+            class="sticker"
+            style="--r: -13deg"
+            href="#work"
+            aria-label="Explore architecture"
+            ><img
+              src="assets/space.svg"
+              alt="Geometric architectural concept" /></a
+          ><a
+            class="sticker"
+            style="--r: 8deg"
+            href="#work"
+            aria-label="Explore design"
+            ><img src="assets/type.svg" alt="Colorful typographic study" /></a
+          ><a
+            class="sticker"
+            style="--r: -6deg"
+            href="#work"
+            aria-label="Explore film"
+            ><img src="assets/film.svg" alt="Illustrated river and boat"
+          /></a>
+        </div>
+        <p class="intro">Design, Illustration, Architecture and Art</p>
+      </section>
+      <section
+        class="featured"
+        aria-label="Featured work carousel"
+        aria-roledescription="carousel"
+      >
+        <h2>Featured work</h2>
+        <div class="carousel-stage" id="carousel-stage"></div>
+        <div class="carousel-controls">
+          <button id="carousel-prev" aria-label="Previous project">←</button
+          ><span
+            id="carousel-status"
+            aria-live="polite"
+            aria-atomic="true"
+          ></span
+          ><button id="carousel-next" aria-label="Next project">→</button>
+        </div>
+      </section>
+      <section id="work" class="work">
+        <div class="section-head">
+          <h2>All Works</h2>
+        </div>
+        <div class="filters" aria-label="Filter projects">
+          <button aria-pressed="false" data-filter="Concept art">
+            Concept art</button
+          ><button aria-pressed="false" data-filter="Illustration">
+            Illustration</button
+          ><button aria-pressed="false" data-filter="Graphic Design">
+            Graphic Design</button
+          ><button aria-pressed="false" data-filter="Caricature">
+            Caricature</button
+          ><button aria-pressed="false" data-filter="Cartoon">Cartoon</button
+          ><button aria-pressed="false" data-filter="Architecture">
+            Architecture
+          </button>
+        </div>
+        <div class="grid" id="projects"></div>
+      </section>
+      <section class="about-teaser"><a href="about.html"
+          >Different mediums.<br />Same curiosity.
+          <span aria-hidden="true">↗</span><small>Get to know me</small></a
+        >
+      </section>
+    </main>
+    <footer id="contact">
+      <span class="small">GOOD THINGS START WITH A CONVERSATION.</span>
+      <div class="contact-title-wrap"><h2>CONTACT</h2></div>
+      <p>Reach me here:</p>
+      <nav class="contact-links" aria-label="Contact links">
+        <a href="#">Gmail ↗</a><a href="#">Instagram ↗</a
+        ><a href="#">Facebook ↗</a>
+      </nav>
+      <a href="about.html">More about me ↗</a>
+      <div class="bottom">
+        <span>© <span id="year"></span> Mirazul Tanam</span
+        ><a href="#">Back to the top ↑</a><span>Made with curiosity.</span>
+      </div>
+    </footer>
+    <div class="palette" aria-label="Choose a color theme">
+      <span aria-hidden="true">Feeling colorful?</span
+      ><button
+        data-theme="default"
+        style="background: #f4f2e9"
+        aria-label="Cream theme"
+        aria-pressed="true"
+      ></button
+      ><button
+        data-theme="purple"
+        style="background: #c3b4ef"
+        aria-label="Lavender theme"
+        aria-pressed="false"
+      ></button
+      ><button
+        data-theme="green"
+        style="background: #d9f777"
+        aria-label="Lime theme"
+        aria-pressed="false"
+      ></button
+      ><button
+        data-theme="dark"
+        style="background: #252c29"
+        aria-label="Dark theme"
+        aria-pressed="false"
+      ></button>
+    </div>
+    <dialog id="project-modal" aria-labelledby="modal-title">
+      <button class="modal-close" aria-label="Close gallery" autofocus>
+        ×
+      </button>
+      <div class="project-page">
+        <div class="project-heading">
+          <span class="tag" id="modal-category"></span>
+          <h2 id="modal-title"></h2>
+          <p id="modal-description"></p>
+        </div>
+        <div class="modal-gallery" id="modal-gallery"></div>
+        <div class="gallery-end">
+          <p>Concept artwork</p>
+          <button class="modal-back">← Back to All Works</button>
+        </div>
+      </div>
+    </dialog>
+    <script src="projects.js"></script>
+    <script src="app.js"></script>
+    <script src="contact-motion.js"></script>
+  </body>
+</html>
