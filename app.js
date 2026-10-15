@@ -1,3 +1,4 @@
+history.scrollRestoration='manual';scrollTo(0,0);
 const grid=document.querySelector('#projects'),modal=document.querySelector('dialog');
 projects.forEach((p,i)=>{const b=document.createElement('button');b.className='project';b.dataset.category=p.category;b.innerHTML=`<div class="cover"><img src="assets/${p.asset}.svg" alt="${p.title} concept illustration" loading="lazy"><span class="view">View work ↗</span></div>`;b.addEventListener('click',()=>openProject(i));grid.append(b)});
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{const clear=b.getAttribute('aria-pressed')==='true';document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(!clear&&x===b)));document.querySelectorAll('.project').forEach(p=>p.hidden=!clear&&p.dataset.category!==b.dataset.filter)}));
