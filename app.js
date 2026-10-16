@@ -6,7 +6,14 @@ projects.forEach((p, i) => {
   const b = document.createElement("button");
   b.className = "project";
   b.dataset.category = p.category || "";
-  b.innerHTML = `<div class="cover"><img src="${p.asset}" alt="${p.title} — ${p.category || "work"}" loading="lazy"></div>`;
+  const img = document.createElement("img");
+  img.src = p.asset;
+  img.alt = `${p.title} — ${p.category || "work"}`;
+  img.loading = "lazy";
+  const cover = document.createElement("div");
+  cover.className = "cover";
+  cover.append(img);
+  b.append(cover);
   b.addEventListener("click", () => openProject(i));
   grid.append(b);
 });
@@ -32,20 +39,10 @@ document.querySelectorAll("[data-filter]").forEach((b) =>
 document
   .querySelector(".modal-close")
   .addEventListener("click", () => modal.close());
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    const r = modal.getBoundingClientRect();
-    if (
-      e.clientX < r.left ||
-      e.clientX > r.right ||
-      e.clientY < r.top ||
-      e.clientY > r.bottom
-    )
-      modal.close();
-  }
-});
+let videoIO = null;
 modal.addEventListener("close", () => {
   document.body.classList.remove("modal-open");
+  videoIO?.disconnect();
   document.querySelectorAll("#modal-gallery video").forEach((v) => {
     v.pause();
     v.currentTime = 0;
@@ -53,32 +50,6 @@ modal.addEventListener("close", () => {
   if (projectTrigger?.isConnected)
     projectTrigger.focus({ preventScroll: true });
 });
-function setTheme(theme) {
-  if (!["default", "purple", "green", "dark"].includes(theme))
-    theme = "default";
-  document.body.dataset.theme = theme;
-  document
-    .querySelectorAll("button[data-theme]")
-    .forEach((b) =>
-      b.setAttribute("aria-pressed", String(b.dataset.theme === theme)),
-    );
-  try {
-    localStorage.setItem("portfolio-theme", theme);
-  } catch {}
-}
-document.querySelectorAll("button[data-theme]").forEach((b) =>
-  b.addEventListener("click", (e) => {
-    setTheme(b.dataset.theme);
-    if (e.detail) b.blur();
-  }),
-);
-try {
-  setTheme(localStorage.getItem("portfolio-theme") || "default");
-} catch {}
-document.querySelector("#year").textContent = new Date().getFullYear();
-
-// WebKit only applies :active when a touch listener exists.
-document.addEventListener("touchstart", () => {}, { passive: true });
 
 // Tilted, wrapping featured-work carousel. No automatic motion while reading.
 const carouselStage = document.querySelector("#carousel-stage");
@@ -94,7 +65,14 @@ const slides = featured.map(({ p, i }, n) => {
     "aria-label",
     `${p.label || p.title}, ${n + 1} of ${featured.length}`,
   );
-  b.innerHTML = `<img src="${p.asset}" alt="${p.label || p.title} — ${p.category || "work"}" loading="lazy"><span class="slide-label">${p.label || p.title}</span>`;
+  const img = document.createElement("img");
+  img.src = p.asset;
+  img.alt = `${p.label || p.title} — ${p.category || "work"}`;
+  img.loading = "lazy";
+  const label = document.createElement("span");
+  label.className = "slide-label";
+  label.textContent = p.label || p.title;
+  b.append(img, label);
   b.addEventListener("click", () => {
     if (n === activeSlide) {
       grid.children[i].click();
@@ -168,14 +146,22 @@ carouselStage.addEventListener(
 carouselStage.addEventListener("dragstart", (e) => e.preventDefault());
 renderCarousel();
 const sizeStage = () => {
+  stageQueued = false;
   if (!slides.length) return;
   carouselStage.style.height =
     Math.ceil(
       slides[0].offsetTop + Math.max(...slides.map((s) => s.offsetHeight)) + 12,
     ) + "px";
 };
+let stageQueued = false;
+const scheduleStage = () => {
+  if (!stageQueued) {
+    stageQueued = true;
+    requestAnimationFrame(sizeStage);
+  }
+};
 sizeStage();
-addEventListener("resize", sizeStage);
+addEventListener("resize", scheduleStage);
 document.fonts?.ready.then(sizeStage);
 
 let projectTrigger = null;
@@ -199,8 +185,9 @@ function openProject(index) {
         media.src = item.src;
         media.muted = true;
         media.loop = true;
-        media.autoplay = true;
         media.playsInline = true;
+        media.preload = "metadata";
+        media.setAttribute("aria-label", `${project.title} — video ${i + 1}`);
       } else {
         media = document.createElement("img");
         media.src = item.src;
@@ -218,39 +205,20 @@ function openProject(index) {
   document.body.classList.add("modal-open");
   modal.showModal();
   modal.scrollTop = 0;
-  gallery.querySelectorAll("video").forEach((v) => v.play().catch(() => {}));
+  // Videos play only while visible, so off-screen ones stay at metadata.
+  videoIO?.disconnect();
+  videoIO = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const v = entry.target;
+        if (entry.isIntersecting) v.play().catch(() => {});
+        else v.pause();
+      }
+    },
+    { root: modal },
+  );
+  gallery.querySelectorAll("video").forEach((v) => videoIO.observe(v));
 }
 document
   .querySelector(".modal-back")
   .addEventListener("click", () => modal.close());
-
-// Brand is contextual: from the hero it jumps to contact, elsewhere it returns to the top.
-const brand = document.querySelector(".brand"),
-  hero = document.querySelector(".hero");
-if (brand && hero) {
-  let queued = false;
-  const onHero = () => hero.getBoundingClientRect().bottom > 0,
-    sync = () => {
-      queued = false;
-      const label = onHero() ? "Scroll to contact" : "Back to top";
-      brand.setAttribute("aria-label", label);
-      brand.setAttribute("title", label);
-    };
-  brand.addEventListener("click", (e) => {
-    e.preventDefault();
-    onHero()
-      ? document.querySelector("#contact").scrollIntoView()
-      : scrollTo({ top: 0 });
-  });
-  addEventListener(
-    "scroll",
-    () => {
-      if (!queued) {
-        queued = true;
-        requestAnimationFrame(sync);
-      }
-    },
-    { passive: true },
-  );
-  sync();
-}

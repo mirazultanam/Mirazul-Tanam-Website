@@ -110,15 +110,15 @@ const projects = [
   {
     title: "MIST",
     category: "Illustration",
-    asset: "assets/illustration/mist-img-20231207-110519.webp",
+    asset: "assets/illustration/mist-rag-yello-grid-01.webp",
     images: [
-      {
-        src: "assets/illustration/mist-img-20231207-110519.webp",
-        layout: "full",
-      },
       {
         src: "assets/illustration/mist-rag-yello-grid-01.webp",
         layout: "half",
+      },
+      {
+        src: "assets/illustration/mist-img-20231207-110519.webp",
+        layout: "full",
       },
     ],
   },
@@ -153,17 +153,17 @@ const projects = [
   {
     title: "Vashani-Parishad",
     category: "Illustration",
-    asset: "assets/illustration/vashani-parishad-6143465222871040174-121.webp",
+    asset: "assets/illustration/vashani-parishad-img-0285.webp",
     featured: true,
     featuredRank: 6,
     label: "Worked For _Vashani Parishad_",
     images: [
       {
-        src: "assets/illustration/vashani-parishad-6143465222871040174-121.webp",
+        src: "assets/illustration/vashani-parishad-img-0285.webp",
         layout: "full",
       },
       {
-        src: "assets/illustration/vashani-parishad-img-0285.webp",
+        src: "assets/illustration/vashani-parishad-6143465222871040174-121.webp",
         layout: "full",
       },
     ],
@@ -171,8 +171,12 @@ const projects = [
   {
     title: "Automobile Business",
     category: "Graphic Design",
-    asset: "assets/graphic-design/automobile-business-2.webp",
+    asset: "assets/graphic-design/automobile-business-insight-1.webp",
     images: [
+      {
+        src: "assets/graphic-design/automobile-business-insight-1.webp",
+        layout: "full",
+      },
       {
         src: "assets/graphic-design/automobile-business-2.webp",
         layout: "full",
@@ -196,10 +200,6 @@ const projects = [
       {
         src: "assets/graphic-design/automobile-business-insight-baridhara-mosque-copy.webp",
         layout: "half",
-      },
-      {
-        src: "assets/graphic-design/automobile-business-insight-1.webp",
-        layout: "full",
       },
       {
         src: "assets/graphic-design/automobile-business-insight.webp",

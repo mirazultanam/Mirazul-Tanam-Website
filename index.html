@@ -9,9 +9,23 @@
       content="Mirazul Tanam — architecture student, visual designer, and creative producer based in Bangladesh."
     />
     <title>Mirazul Tanam — Selected Work</title>
+    <link
+      rel="preload"
+      href="assets/headline-semibold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <script>
+      // Set the theme before first paint; shared.js validates and syncs buttons.
+      try {
+        document.body.dataset.theme =
+          localStorage.getItem("portfolio-theme") || "default";
+      } catch {}
+    </script>
     <header>
       <a class="brand" href="#" aria-label="Home">MT.</a
       ><a
@@ -19,20 +33,12 @@
         class="round about-button"
         aria-label="About me"
         title="About me"
-        ><svg
-          viewBox="0 0 32 32"
-          width="25"
-          height="25"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-          aria-hidden="true"
-        >
-          <circle cx="16" cy="16" r="13" />
-          <path
-            d="M8 26c1-7 15-7 16 0M11 12a5 5 0 0 1 10 0v3a5 5 0 0 1-10 0z"
-          />
-          <path d="M10 11q6-9 12 0" /></svg
+        ><img
+          src="assets/profile.webp"
+          alt=""
+          width="41"
+          height="41"
+          decoding="async"
       ></a>
     </header>
     <main>
@@ -45,20 +51,20 @@
             href="#work"
             aria-label="Explore architecture"
             ><img
-              src="assets/space.svg"
-              alt="Geometric architectural concept" /></a
+              src="assets/sticker-sm-barrack.webp"
+              alt="Architectural illustration of a barrack" /></a
           ><a
             class="sticker"
             style="--r: 8deg"
             href="#work"
             aria-label="Explore design"
-            ><img src="assets/type.svg" alt="Colorful typographic study" /></a
+            ><img src="assets/sticker-illustration.webp" alt="Illustrated samurai character" /></a
           ><a
             class="sticker"
             style="--r: -6deg"
             href="#work"
             aria-label="Explore film"
-            ><img src="assets/film.svg" alt="Illustrated river and boat"
+            ><img src="assets/sticker-independence-day.webp" alt="Independence day poster design"
           /></a>
         </div>
         <p class="intro">Design, Illustration, Architecture and Art</p>
@@ -106,8 +112,18 @@
       <div class="contact-title-wrap"><h2>CONTACT</h2></div>
       <p>Reach me here:</p>
       <nav class="contact-links" aria-label="Contact links">
-        <a href="#">Gmail</a><a href="#">Instagram</a
-        ><a href="#">Facebook</a>
+        <a href="mailto:mirazultanam@gmail.com">Gmail</a
+        ><a
+          href="https://www.instagram.com/_luzarim"
+          target="_blank"
+          rel="noopener"
+          >Instagram</a
+        ><a
+          href="https://www.linkedin.com/in/mirazul-tanam-391a46216"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
       </nav>
       <div class="bottom">
         <span>© <span id="year"></span> Mirazul Tanam</span>
@@ -158,6 +174,7 @@
       </div>
     </dialog>
     <script src="projects.js"></script>
+    <script src="shared.js"></script>
     <script src="app.js"></script>
     <script src="contact-motion.js"></script>
   </body>

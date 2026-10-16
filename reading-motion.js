@@ -32,6 +32,7 @@
     const h = window.innerHeight;
     for (const { paragraph, words } of groups) {
       const rect = paragraph.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > h) continue;
       const distance = rect.height + h * 0.28;
       const progress = Math.max(
         0,

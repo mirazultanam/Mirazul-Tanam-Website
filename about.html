@@ -8,9 +8,23 @@
       content="About Mirazul Tanam, architecture student, Designer and Artist based in Bangladesh."
     />
     <title>About — Mirazul Tanam</title>
+    <link
+      rel="preload"
+      href="assets/headline-semibold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <script>
+      // Set the theme before first paint; shared.js validates and syncs buttons.
+      try {
+        document.body.dataset.theme =
+          localStorage.getItem("portfolio-theme") || "default";
+      } catch {}
+    </script>
     <header>
       <a class="brand" href="#" aria-label="Home">MT.</a
       ><a
@@ -81,7 +95,18 @@
       <div class="contact-title-wrap"><h2>CONTACT</h2></div>
       <p>Reach me here:</p>
       <nav class="contact-links" aria-label="Contact links">
-        <a href="#">Gmail</a><a href="#">Instagram</a><a href="#">Facebook</a>
+        <a href="mailto:mirazultanam@gmail.com">Gmail</a
+        ><a
+          href="https://www.instagram.com/_luzarim"
+          target="_blank"
+          rel="noopener"
+          >Instagram</a
+        ><a
+          href="https://www.linkedin.com/in/mirazul-tanam-391a46216"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
       </nav>
       <div class="bottom">
         <span>© <span id="year"></span> Mirazul Tanam</span
@@ -115,7 +140,7 @@
         aria-pressed="false"
       ></button>
     </div>
-    <script src="about.js"></script>
+    <script src="shared.js"></script>
     <script src="reading-motion.js"></script>
     <script src="contact-motion.js"></script>
   </body>

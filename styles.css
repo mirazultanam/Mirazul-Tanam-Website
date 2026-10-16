@@ -1,6 +1,6 @@
 @font-face {
   font-family: Headline;
-  src: url("assets/headline-semibold.ttf");
+  src: url("assets/headline-semibold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -87,7 +87,7 @@ header {
   font-size: 1.3125rem;
 }
 .hero {
-  min-height: 890px;
+  min-height: 940px;
   height: 100svh;
   max-height: 1150px;
   position: relative;
@@ -99,16 +99,9 @@ header {
   text-align: center;
   overflow: hidden;
 }
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.625rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-}
 .hero h1 {
   font:
-    600 clamp(6.25rem, 19vw, 16.875rem)/0.92 Headline,
+    600 clamp(6.25rem, 18vw, 16.875rem)/0.92 Headline,
     sans-serif;
   letter-spacing: 0.005em;
   margin: 0;
@@ -122,7 +115,7 @@ header {
   height: 140px;
   display: flex;
   justify-content: center;
-  margin: -1.25rem 0 1.75rem;
+  margin: 0.1875rem 0 1.75rem;
   z-index: 2;
 }
 .sticker {
@@ -150,24 +143,9 @@ header {
 .intro {
   font: 600 clamp(1.5rem, 3vw, 2.6875rem)/0.95 Headline;
   text-transform: uppercase;
+  letter-spacing: 0.015em;
   max-width: 510px;
   margin: 0.75rem 0 0.875rem;
-}
-.location {
-  font-size: 0.75rem;
-}
-.hero-bottom {
-  position: absolute;
-  bottom: 30px;
-  left: 34px;
-  right: 34px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.625rem;
-  letter-spacing: 1px;
-}
-.hero-bottom a {
-  font-size: 0.75rem;
 }
 .work {
   padding: 6.875rem 5vw 5rem;
@@ -178,8 +156,7 @@ header {
   justify-content: space-between;
   margin-bottom: 2.8125rem;
 }
-.section-head h2,
-.about h2 {
+.section-head h2 {
   font: 600 clamp(3.75rem, 8vw, 7.5rem)/1 Headline;
   letter-spacing: 0.01em;
   text-transform: uppercase;
@@ -242,40 +219,6 @@ header {
   transition: transform 0.6s;
 }
 
-.caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
-  align-items: baseline;
-  margin-top: 0.9375rem;
-}
-.caption h3 {
-  font: 600 1.9375rem/1 Headline;
-  text-transform: uppercase;
-  margin: 0;
-}
-.caption span {
-  font-size: 0.75rem;
-}
-.note {
-  font-size: 0.6875rem;
-  line-height: 1.6;
-  margin-top: 2.1875rem;
-  opacity: 0.65;
-}
-.about {
-  padding: 6.25rem 8vw 8.125rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4.375rem;
-  border-top: 1px solid color-mix(in srgb, var(--ink), transparent 80%);
-  transition: border-color 0.35s;
-}
-.about p {
-  font-size: 1.25rem;
-  line-height: 1.55;
-  margin: 0 0 1.75rem;
-}
 .disciplines {
   display: flex;
   flex-wrap: wrap;
@@ -290,11 +233,17 @@ header {
 footer {
   background: var(--ink);
   color: var(--paper);
-  padding: 4.375rem 5vw 5rem;
+  padding: 4.375rem 3vw 5rem;
   text-align: center;
   transition:
     background 0.35s,
     color 0.35s;
+  min-height: 90svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 footer .small {
   font-size: 0.75rem;
@@ -389,20 +338,6 @@ footer .bottom > :last-child {
   max-width: 10em;
   opacity: 1;
 }
-dialog {
-  max-width: 900px;
-  width: 92vw;
-  border: 0;
-  padding: 0;
-  background: var(--paper);
-  color: var(--ink);
-  border-radius: 8px;
-  max-height: 90svh;
-}
-dialog::backdrop {
-  background: #101510bd;
-  backdrop-filter: blur(7px);
-}
 .modal-close {
   position: absolute;
   right: 15px;
@@ -414,23 +349,6 @@ dialog::backdrop {
   font-size: 1.5625rem;
   background: var(--paper);
 }
-dialog img {
-  width: 100%;
-  max-height: 48vh;
-  object-fit: cover;
-}
-dialog .detail {
-  padding: 1.875rem;
-}
-dialog h2 {
-  font: 600 3.125rem/1 Headline;
-  text-transform: uppercase;
-  margin: 0 0 0.9375rem;
-}
-dialog p {
-  line-height: 1.65;
-  max-width: 650px;
-}
 .tag {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -440,8 +358,7 @@ dialog p {
   overflow: hidden;
 }
 @media (min-width: 1500px) {
-  .work,
-  .about {
+  .work {
     max-width: 1600px;
     margin: auto;
   }
@@ -449,13 +366,6 @@ dialog p {
 @media (max-width: 650px) {
   header {
     padding: 1.25rem;
-  }
-  .hero {
-    min-height: 730px;
-    max-height: 900px;
-  }
-  .hero h1 {
-    font-size: 26vw;
   }
   .stickers {
     height: 110px;
@@ -470,18 +380,6 @@ dialog p {
     font-size: 1.9375rem;
     max-width: 310px;
   }
-  .hero-bottom {
-    left: 20px;
-    right: 20px;
-  }
-  .hero-bottom span {
-    max-width: 150px;
-    text-align: left;
-    line-height: 1.5;
-  }
-  .work {
-    padding: 4.375rem 1.25rem;
-  }
   .filters button {
     min-height: 44px;
   }
@@ -491,27 +389,9 @@ dialog p {
   .section-head p {
     margin-top: 1.25rem;
   }
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .caption h3 {
-    font-size: 1.8125rem;
-  }
-  .about {
-    padding: 4.0625rem 1.5rem;
-    grid-template-columns: 1fr;
-    gap: 1.875rem;
-  }
-  .about p {
-    font-size: 1.125rem;
-  }
   footer .bottom {
     gap: 1.25rem;
     text-align: left;
-  }
-  .eyebrow {
-    font-size: 0.5625rem;
   }
 }
 @media (hover: hover) and (pointer: fine) {
@@ -528,51 +408,11 @@ dialog p {
   header .about-button:hover {
     transform: rotate(-10deg) scale(1.08);
   }
-  .about-teaser > a:hover > span {
-    display: inline-block;
-    transform: translate(5px, -5px);
-  }
   #project-modal .modal-close:hover {
     transform: rotate(90deg);
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-  }
-  .sticker:hover,
-  .sticker:hover img,
-  .project:hover img,
-  header .about-button:hover,
-  .about-teaser > a:hover > span,
-  #project-modal .modal-close:hover {
-    transform: none;
-  }
-  .hero h1,
-  .intro {
-    animation: none;
-  }
-}
 
-.hero h1 {
-  font-size: clamp(6.25rem, 18vw, 16.875rem);
-}
-.caption h3,
-.intro,
-dialog h2 {
-  letter-spacing: 0.015em;
-}
-.stickers {
-  margin-top: 0.1875rem;
-}
-.hero {
-  min-height: 940px;
-}
 .sticker {
   animation: arrive-wiggle 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
   animation-delay: 0.15s;
@@ -721,9 +561,13 @@ dialog h2 {
 @media (max-width: 650px) {
   .hero {
     min-height: 800px;
+    max-height: 900px;
   }
   .hero h1 {
     font-size: 25vw;
+  }
+  .work {
+    padding: 4.0625rem 1.25rem 4.375rem;
   }
   .featured {
     padding-top: 2.8125rem;
@@ -750,11 +594,6 @@ dialog h2 {
     margin-top: 0.625rem;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .sticker {
-    animation: none !important;
-  }
-}
 
 header .brand {
   position: fixed;
@@ -773,14 +612,18 @@ header .about-button {
     transform 0.3s,
     background 0.35s;
 }
+header .about-button img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
 
 .about-teaser {
   padding: 6.25rem 1.5625rem 7.5rem;
   text-align: center;
   border-top: 1px solid #8883;
-}
-.about-teaser .eyebrow {
-  display: block;
 }
 .about-teaser > a {
   display: block;
@@ -793,15 +636,6 @@ header .about-button {
   margin-top: 1.5625rem;
 }
 
-footer {
-  min-height: 90svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  padding: 4.375rem 3vw 5rem;
-  overflow: hidden;
-}
 footer .contact-title-wrap {
   transform-origin: center bottom;
   will-change: transform;
@@ -873,26 +707,6 @@ footer.contact-pop h2 {
 .back-work:hover {
   background: var(--accent);
 }
-.about-art {
-  display: flex;
-  justify-content: center;
-  gap: 1.125rem;
-  margin: 3.4375rem 0 4.0625rem;
-}
-.about-art img {
-  width: 28%;
-  max-width: 180px;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 5px;
-  transform: rotate(-8deg);
-}
-.about-art img:nth-child(2) {
-  transform: rotate(7deg);
-}
-.about-art img:nth-child(3) {
-  transform: rotate(-4deg);
-}
 @media (max-width: 650px) {
   header .brand {
     left: 20px;
@@ -916,19 +730,8 @@ footer.contact-pop h2 {
   .about-page h1 {
     margin-bottom: 2.8125rem;
   }
-  .about-statement {
-    margin-bottom: 2.5rem;
-  }
   .about-teaser {
     padding: 4.375rem 1.25rem 5.3125rem;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  footer .contact-title-wrap {
-    transform: none !important;
-  }
-  footer.contact-pop h2 {
-    animation: none !important;
   }
 }
 
@@ -1002,15 +805,8 @@ footer.contact-pop h2 {
     Arial,
     sans-serif;
   letter-spacing: 0.01em;
+  text-transform: uppercase;
   margin: 0 0 1.125rem;
-}
-#project-modal .project-heading p {
-  font:
-    0.9375rem/1.5 Arial,
-    sans-serif;
-  opacity: 0.7;
-  margin: 0 auto;
-  max-width: 410px;
 }
 .modal-gallery {
   display: grid;
@@ -1068,17 +864,6 @@ footer.contact-pop h2 {
   border-radius: 12px;
   box-shadow: 0 16px 30px #00000012;
 }
-#projects .caption {
-  display: block;
-  text-align: center;
-}
-#projects .caption h3 {
-  font-size: 1.6875rem;
-  margin-bottom: 0.4375rem;
-}
-#projects .caption span {
-  opacity: 0.7;
-}
 @media (max-width: 850px) {
   #projects {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1111,20 +896,6 @@ footer.contact-pop h2 {
   #projects {
     gap: 1.875rem 0.9375rem;
   }
-  #projects .caption h3 {
-    font-size: 1.375rem;
-  }
-  #projects .caption span {
-    font-size: 0.75rem;
-  }
-  #project-modal .project-heading p {
-    font-size: 0.875rem;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  #project-modal[open] {
-    animation: none;
-  }
 }
 .modal-gallery .gallery-item:only-child {
   grid-column: 1/-1;
@@ -1140,12 +911,6 @@ footer.contact-pop h2 {
 .reading-word {
   color: color-mix(in srgb, var(--ink) var(--read-ink, 35%), var(--paper));
   transition: color 0.08s linear;
-}
-@media (prefers-reduced-motion: reduce) {
-  .reading-word {
-    color: var(--ink);
-    transition: none;
-  }
 }
 .experience {
   margin: 5.9375rem auto 5.3125rem;
@@ -1240,5 +1005,37 @@ header .about-button:active:not(:focus-visible) {
   }
   #project-modal .modal-close:active:not(:focus-visible) {
     transform: rotate(90deg) scale(0.96);
+  }
+}
+
+/* Single reduced-motion block, placed last so it wins over base animations. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+  .sticker:hover,
+  .sticker:hover img,
+  .project:hover img,
+  header .about-button:hover,
+  #project-modal .modal-close:hover {
+    transform: none;
+  }
+  .hero h1,
+  .intro,
+  .sticker,
+  footer.contact-pop h2,
+  #project-modal[open] {
+    animation: none !important;
+  }
+  footer .contact-title-wrap {
+    transform: none !important;
+  }
+  .reading-word {
+    color: var(--ink);
   }
 }
