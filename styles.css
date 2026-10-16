@@ -132,7 +132,10 @@ header {
   border: 7px solid var(--paper);
   box-shadow: 0 14px 25px #0002;
   transform: rotate(var(--r));
-  transition: transform 0.4s;
+  transition:
+    transform 0.4s,
+    background 0.35s,
+    border-color 0.35s;
   border-radius: 3px;
   background: var(--paper);
   margin: 0 -0.5625rem;
@@ -202,6 +205,10 @@ header {
   padding: 0.625rem 1.125rem;
   border-radius: 30px;
   font-size: 0.75rem;
+  transition:
+    background 0.35s,
+    color 0.35s,
+    transform 0.16s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .filters button[aria-pressed="true"] {
   background: var(--ink);
@@ -262,6 +269,7 @@ header {
   grid-template-columns: 1fr 1fr;
   gap: 4.375rem;
   border-top: 1px solid color-mix(in srgb, var(--ink), transparent 80%);
+  transition: border-color 0.35s;
 }
 .about p {
   font-size: 1.25rem;
@@ -284,6 +292,9 @@ footer {
   color: var(--paper);
   padding: 4.375rem 5vw 5rem;
   text-align: center;
+  transition:
+    background 0.35s,
+    color 0.35s;
 }
 footer .small {
   font-size: 0.75rem;
@@ -340,6 +351,7 @@ footer .bottom > :last-child {
   padding: 0.5625rem;
   border-radius: 35px;
   background: var(--paper);
+  transition: background 0.35s;
   box-shadow: 0 3px 20px #0002;
   border: 1px solid #8883;
 }
@@ -562,7 +574,7 @@ dialog h2 {
   min-height: 940px;
 }
 .sticker {
-  animation: arrive-wiggle 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: arrive-wiggle 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
   animation-delay: 0.15s;
 }
 .sticker:nth-child(2) {
@@ -666,8 +678,8 @@ dialog h2 {
 }
 .slide .slide-label {
   display: inline-block;
-  background: var(--accent);
   color: var(--ink);
+  transition: color 0.35s;
   font: 600 1.1875rem/1.2 Headline;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -677,19 +689,21 @@ dialog h2 {
 }
 .slide.active {
   opacity: 1;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(var(--press, 1));
   z-index: 2;
   pointer-events: auto;
 }
 .slide.previous {
   opacity: 1;
-  transform: translateX(-183%) translateY(72px) rotate(-14deg);
+  transform: translateX(-183%) translateY(72px) rotate(-14deg)
+    scale(var(--press, 1));
   z-index: 1;
   pointer-events: auto;
 }
 .slide.next {
   opacity: 1;
-  transform: translateX(83%) translateY(72px) rotate(14deg);
+  transform: translateX(83%) translateY(72px) rotate(14deg)
+    scale(var(--press, 1));
   z-index: 1;
   pointer-events: auto;
 }
@@ -722,10 +736,12 @@ dialog h2 {
     max-width: 300px;
   }
   .slide.previous {
-    transform: translateX(-158%) translateY(44px) rotate(-12deg);
+    transform: translateX(-158%) translateY(44px) rotate(-12deg)
+      scale(var(--press, 1));
   }
   .slide.next {
-    transform: translateX(58%) translateY(44px) rotate(12deg);
+    transform: translateX(58%) translateY(44px) rotate(12deg)
+      scale(var(--press, 1));
   }
   #carousel-status {
     margin-top: 0;
@@ -753,7 +769,9 @@ header .about-button {
   background: var(--paper);
   box-shadow: 0 6px 22px #0002;
   z-index: 8;
-  transition: transform 0.3s;
+  transition:
+    transform 0.3s,
+    background 0.35s;
 }
 
 .about-teaser {
@@ -1159,4 +1177,68 @@ footer.contact-pop h2 {
 }
 .experience-org {
   display: block;
+}
+.ext{display:inline-block;width:.62em;height:.62em;background-color:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 18 18 6M8 6h10v10'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 18 18 6M8 6h10v10'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* Press feedback */
+.palette button {
+  transition:
+    transform 0.16s cubic-bezier(0.22, 1, 0.36, 1),
+    outline-color 0.35s;
+}
+.project,
+.contact-links a,
+.back-work,
+.modal-back,
+.about-teaser > a {
+  transition: transform 0.16s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.contact-links a:active:not(:focus-visible),
+.back-work:active:not(:focus-visible),
+.modal-back:active:not(:focus-visible),
+.about-teaser > a:active:not(:focus-visible) {
+  transform: scale(0.96);
+}
+.palette button:active:not(:focus-visible) {
+  transform: scale(0.9);
+}
+.project:active:not(:focus-visible) {
+  transform: scale(0.98);
+}
+.filters button:active:not(:focus-visible) {
+  transform: scale(0.96);
+}
+.slide:active:not(:focus-visible) {
+  --press: 0.96;
+  transition-duration:
+    0.16s,
+    0.5s;
+}
+.sticker:active:not(:focus-visible) {
+  transform: rotate(var(--r)) scale(0.96);
+  transition-duration:
+    0.16s,
+    0.35s,
+    0.35s;
+}
+header .about-button:active:not(:focus-visible) {
+  transform: scale(0.96);
+  transition-duration:
+    0.16s,
+    0.35s;
+}
+#project-modal .modal-close:active:not(:focus-visible) {
+  transform: scale(0.96);
+  transition-duration: 0.16s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .sticker:active:not(:focus-visible) {
+    transform: translateY(-25px) rotate(0) scale(0.96);
+  }
+  header .about-button:active:not(:focus-visible) {
+    transform: rotate(-10deg) scale(0.96);
+  }
+  #project-modal .modal-close:active:not(:focus-visible) {
+    transform: rotate(90deg) scale(0.96);
+  }
 }

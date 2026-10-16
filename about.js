@@ -1,6 +1,57 @@
-function setTheme(theme){if(!['default','purple','green','dark'].includes(theme))theme='default';document.body.dataset.theme=theme;document.querySelectorAll('button[data-theme]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.theme===theme)));try{localStorage.setItem('portfolio-theme',theme)}catch{}}
-document.querySelectorAll('button[data-theme]').forEach(b=>b.addEventListener('click',e=>{setTheme(b.dataset.theme);if(e.detail)b.blur()}));try{setTheme(localStorage.getItem('portfolio-theme')||'default')}catch{}document.querySelector('#year').textContent=new Date().getFullYear();
+function setTheme(theme) {
+  if (!["default", "purple", "green", "dark"].includes(theme))
+    theme = "default";
+  document.body.dataset.theme = theme;
+  document
+    .querySelectorAll("button[data-theme]")
+    .forEach((b) =>
+      b.setAttribute("aria-pressed", String(b.dataset.theme === theme)),
+    );
+  try {
+    localStorage.setItem("portfolio-theme", theme);
+  } catch {}
+}
+document.querySelectorAll("button[data-theme]").forEach((b) =>
+  b.addEventListener("click", (e) => {
+    setTheme(b.dataset.theme);
+    if (e.detail) b.blur();
+  }),
+);
+try {
+  setTheme(localStorage.getItem("portfolio-theme") || "default");
+} catch {}
+document.querySelector("#year").textContent = new Date().getFullYear();
+
+// WebKit only applies :active when a touch listener exists.
+document.addEventListener("touchstart", () => {}, { passive: true });
 
 // Brand is contextual: from the top it jumps to contact, elsewhere it returns to the top.
-const brand=document.querySelector('.brand'),aboutPage=document.querySelector('.about-page');
-if(brand&&aboutPage){let queued=false;const onTop=()=>aboutPage.getBoundingClientRect().top>=0,sync=()=>{queued=false;const label=onTop()?'Scroll to contact':'Back to top';brand.setAttribute('aria-label',label);brand.setAttribute('title',label)};brand.addEventListener('click',e=>{e.preventDefault();onTop()?document.querySelector('#contact').scrollIntoView():scrollTo({top:0})});addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(sync)}},{passive:true});sync()}
+const brand = document.querySelector(".brand"),
+  aboutPage = document.querySelector(".about-page");
+if (brand && aboutPage) {
+  let queued = false;
+  const onTop = () => aboutPage.getBoundingClientRect().top >= 0,
+    sync = () => {
+      queued = false;
+      const label = onTop() ? "Scroll to contact" : "Back to top";
+      brand.setAttribute("aria-label", label);
+      brand.setAttribute("title", label);
+    };
+  brand.addEventListener("click", (e) => {
+    e.preventDefault();
+    onTop()
+      ? document.querySelector("#contact").scrollIntoView()
+      : scrollTo({ top: 0 });
+  });
+  addEventListener(
+    "scroll",
+    () => {
+      if (!queued) {
+        queued = true;
+        requestAnimationFrame(sync);
+      }
+    },
+    { passive: true },
+  );
+  sync();
+}
