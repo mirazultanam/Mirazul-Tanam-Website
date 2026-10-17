@@ -400,7 +400,7 @@ footer .bottom > :last-child {
     z-index: 2;
   }
   .sticker:hover img {
-    transform: rotate(-5deg) scale(1.09);
+    transform: scale(1.09);
   }
   .project:hover img {
     transform: scale(1.045);
@@ -514,7 +514,7 @@ footer .bottom > :last-child {
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 14px;
-  box-shadow: 0 15px 25px #0000000a;
+  box-shadow: 0 14px 25px #0002;
 }
 .slide .slide-label {
   display: inline-block;
