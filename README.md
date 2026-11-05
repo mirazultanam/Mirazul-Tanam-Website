@@ -19,7 +19,7 @@ Where things live:
 
 ### How to change any text
 
-1. Go to [github.com/Zimquadery/Mirazul-Tanam-Website](https://github.com/Zimquadery/Mirazul-Tanam-Website).
+1. Go to [github.com/mirazultanam/Mirazul-Tanam-Website](https://github.com/mirazultanam/Mirazul-Tanam-Website).
 2. Open the `data` folder and click the file you need (see the table above).
 3. Click the pencil icon at the top right of the file.
 4. Find the text you want to change. Edit only what sits between the quotes `" "`.
