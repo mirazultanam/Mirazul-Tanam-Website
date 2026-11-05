@@ -1,5 +1,5 @@
 // Shared page chrome: theme palette, footer year, contextual brand link.
-const THEMES = ["default", "purple", "green", "dark"];
+const THEMES = site.themes.map((t) => t.name);
 function applyTheme(theme) {
   if (!THEMES.includes(theme)) theme = "default";
   document.body.dataset.theme = theme;

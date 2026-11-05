@@ -7,7 +7,7 @@ projects.forEach((p, i) => {
   b.className = "project";
   b.dataset.category = p.category || "";
   const img = document.createElement("img");
-  img.src = p.asset;
+  img.src = p.cover;
   img.alt = `${p.title} — ${p.category || "work"}`;
   img.loading = "lazy";
   const cover = document.createElement("div");
@@ -17,6 +17,17 @@ projects.forEach((p, i) => {
   b.addEventListener("click", () => openProject(i));
   grid.append(b);
 });
+// One filter button per category, in first-appearance order in the data.
+const filters = document.querySelector(".filters");
+[...new Set(projects.map((p) => p.category).filter(Boolean))].forEach(
+  (category) => {
+    const b = document.createElement("button");
+    b.dataset.filter = category;
+    b.setAttribute("aria-pressed", "false");
+    b.textContent = category;
+    filters.append(b);
+  },
+);
 document.querySelectorAll("[data-filter]").forEach((b) =>
   b.addEventListener("click", () => {
     const clear = b.getAttribute("aria-pressed") === "true";
@@ -63,15 +74,15 @@ const slides = featured.map(({ p, i }, n) => {
   b.className = "slide";
   b.setAttribute(
     "aria-label",
-    `${p.label || p.title}, ${n + 1} of ${featured.length}`,
+    `${p.featuredLabel || p.title}, ${n + 1} of ${featured.length}`,
   );
   const img = document.createElement("img");
-  img.src = p.asset;
-  img.alt = `${p.label || p.title} — ${p.category || "work"}`;
+  img.src = p.cover;
+  img.alt = `${p.featuredLabel || p.title} — ${p.category || "work"}`;
   img.loading = "lazy";
   const label = document.createElement("span");
   label.className = "slide-label";
-  label.textContent = p.label || p.title;
+  label.textContent = p.featuredLabel || p.title;
   b.append(img, label);
   b.addEventListener("click", () => {
     if (n === activeSlide) {

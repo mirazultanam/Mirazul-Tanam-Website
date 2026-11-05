@@ -9,6 +9,8 @@
       content="Mirazul Tanam — architecture student, visual designer, and creative producer based in Bangladesh."
     />
     <title>Mirazul Tanam — Selected Work</title>
+    <link rel="icon" href="favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link
       rel="preload"
       href="assets/headline-semibold.woff2"
@@ -27,7 +29,7 @@
       } catch {}
     </script>
     <header>
-      <a class="brand" href="#" aria-label="Home">MT.</a
+      <a class="brand" href="#" aria-label="Home"></a
       ><a
         href="about.html"
         class="round about-button"
@@ -43,31 +45,9 @@
     </header>
     <main>
       <section class="hero">
-        <h1>MIRAZUL<span>TANAM</span></h1>
-        <div class="stickers">
-          <a
-            class="sticker"
-            style="--r: -13deg"
-            href="#work"
-            aria-label="Explore architecture"
-            ><img
-              src="assets/sticker-sm-barrack.webp"
-              alt="Architectural illustration of a barrack" /></a
-          ><a
-            class="sticker"
-            style="--r: 8deg"
-            href="#work"
-            aria-label="Explore design"
-            ><img src="assets/sticker-illustration.webp" alt="Illustrated samurai character" /></a
-          ><a
-            class="sticker"
-            style="--r: -6deg"
-            href="#work"
-            aria-label="Explore film"
-            ><img src="assets/sticker-independence-day.webp" alt="Independence day poster design"
-          /></a>
-        </div>
-        <p class="intro">Design, Illustration, Architecture and Art</p>
+        <h1></h1>
+        <div class="stickers"></div>
+        <p class="intro"></p>
       </section>
       <section
         class="featured"
@@ -82,22 +62,7 @@
         <div class="section-head">
           <h2>All Works</h2>
         </div>
-        <div class="filters" aria-label="Filter projects">
-          <button aria-pressed="false" data-filter="Concept Arts">
-            Concept Arts</button
-          ><button aria-pressed="false" data-filter="Illustration">
-            Illustration</button
-          ><button aria-pressed="false" data-filter="Graphic Design">
-            Graphic Design</button
-          ><button aria-pressed="false" data-filter="Caricatures and Portraits">
-            Caricatures and Portraits</button
-          ><button aria-pressed="false" data-filter="Cartoon">Cartoon</button
-          ><button aria-pressed="false" data-filter="Architectural Illustration">
-            Architectural Illustration</button
-          ><button aria-pressed="false" data-filter="Animation">
-            Animation
-          </button>
-        </div>
+        <div class="filters" aria-label="Filter projects"></div>
         <div class="grid" id="projects"></div>
       </section>
       <section class="about-teaser">
@@ -108,55 +73,18 @@
       </section>
     </main>
     <footer id="contact">
-      <span class="small">GOOD THINGS START WITH A CONVERSATION.</span>
-      <div class="contact-title-wrap"><h2>CONTACT</h2></div>
-      <p>Reach me here:</p>
-      <nav class="contact-links" aria-label="Contact links">
-        <a href="mailto:mirazultanam@gmail.com">Gmail</a
-        ><a
-          href="https://www.instagram.com/_luzarim"
-          target="_blank"
-          rel="noopener"
-          >Instagram</a
-        ><a
-          href="https://www.linkedin.com/in/mirazul-tanam-391a46216"
-          target="_blank"
-          rel="noopener"
-          >LinkedIn</a
-        >
-      </nav>
+      <span class="small"></span>
+      <div class="contact-title-wrap"><h2></h2></div>
+      <p></p>
+      <nav class="contact-links" aria-label="Contact links"></nav>
       <div class="bottom">
-        <span>© <span id="year"></span> Mirazul Tanam</span>
-        <span>Made with curiosity.</span>
+        <span class="copyright"></span>
+        <span class="note"></span>
         <a href="about.html">More about me</a>
       </div>
     </footer>
     <div class="palette" aria-label="Choose a color theme">
-      <span aria-hidden="true">Feeling colorful?</span
-      ><button
-        data-theme="default"
-        style="--swatch: #f4f2e9"
-        aria-label="Cream theme"
-        aria-pressed="true"
-      ></button
-      ><button
-        data-theme="purple"
-        style="--swatch: #c3b4ef"
-        aria-label="Lavender theme"
-        aria-pressed="false"
-      ></button
-      ><button
-        data-theme="green"
-        style="--swatch: #d9f777"
-        aria-label="Lime theme"
-        aria-pressed="false"
-      ></button
-      ><button
-        data-theme="dark"
-        style="--swatch: #252c29"
-        aria-label="Dark theme"
-        aria-pressed="false"
-      ></button>
+      <span aria-hidden="true">Feeling colorful?</span>
     </div>
     <dialog id="project-modal" aria-labelledby="modal-title">
       <button class="modal-close" aria-label="Close gallery" autofocus>
@@ -173,9 +101,11 @@
         </div>
       </div>
     </dialog>
-    <script src="projects.js"></script>
-    <script src="shared.js"></script>
-    <script src="app.js"></script>
-    <script src="contact-motion.js"></script>
+    <script src="data/site.js"></script>
+    <script src="data/projects.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/shared.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/contact-motion.js"></script>
   </body>
 </html>

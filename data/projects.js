@@ -1,4 +1,4 @@
-// Cover = asset (Animation covers are looping animated webp; video:true items are
+// Cover = cover (Animation covers are looping animated webp; video:true items are
 // muted looping mp4 players). Subfolder batches became one project each.
 // featured: true marks entries for the Featured work carousel (keep at least one).
 // layout "full" spans the modal width.
@@ -6,25 +6,25 @@ const projects = [
   {
     title: "Abandoned",
     category: "Concept Arts",
-    asset: "assets/concept-arts/abandoned.webp",
+    cover: "assets/concept-arts/abandoned.webp",
     images: [{ src: "assets/concept-arts/abandoned.webp", layout: "half" }],
   },
   {
     title: "Boar",
     category: "Concept Arts",
-    asset: "assets/concept-arts/boar.webp",
+    cover: "assets/concept-arts/boar.webp",
     images: [{ src: "assets/concept-arts/boar.webp", layout: "half" }],
   },
   {
     title: "Exploration",
     category: "Concept Arts",
-    asset: "assets/concept-arts/exploration.webp",
+    cover: "assets/concept-arts/exploration.webp",
     images: [{ src: "assets/concept-arts/exploration.webp", layout: "full" }],
   },
   {
     title: "Fixation",
     category: "Concept Arts",
-    asset: "assets/concept-arts/fixation-img-1190.webp",
+    cover: "assets/concept-arts/fixation-img-1190.webp",
     images: [
       { src: "assets/concept-arts/fixation-img-1190.webp", layout: "full" },
       { src: "assets/concept-arts/fixation-img-4544.webp", layout: "full" },
@@ -33,7 +33,7 @@ const projects = [
   {
     title: "Lost",
     category: "Concept Arts",
-    asset: "assets/concept-arts/lost-main.webp",
+    cover: "assets/concept-arts/lost-main.webp",
     images: [
       { src: "assets/concept-arts/lost-main.webp", layout: "full" },
       { src: "assets/concept-arts/lost-1.webp", layout: "half" },
@@ -43,19 +43,19 @@ const projects = [
   {
     title: "The Potential",
     category: "Concept Arts",
-    asset: "assets/concept-arts/the-potential.webp",
+    cover: "assets/concept-arts/the-potential.webp",
     images: [{ src: "assets/concept-arts/the-potential.webp", layout: "full" }],
   },
   {
     title: "Always, Lily",
     category: "Illustration",
-    asset: "assets/illustration/always-lily.webp",
+    cover: "assets/illustration/always-lily.webp",
     images: [{ src: "assets/illustration/always-lily.webp", layout: "full" }],
   },
   {
     title: "Bench for one, please_",
     category: "Illustration",
-    asset: "assets/illustration/bench-for-one-please.webp",
+    cover: "assets/illustration/bench-for-one-please.webp",
     images: [
       { src: "assets/illustration/bench-for-one-please.webp", layout: "full" },
     ],
@@ -63,16 +63,16 @@ const projects = [
   {
     title: "Ecdydid",
     category: "Illustration",
-    asset: "assets/illustration/ecdydid.webp",
+    cover: "assets/illustration/ecdydid.webp",
     images: [{ src: "assets/illustration/ecdydid.webp", layout: "full" }],
   },
   {
     title: "Female Martyrs of the July Uprising",
     category: "Illustration",
-    asset: "assets/illustration/female-martyrs-of-the-july-uprising.webp",
+    cover: "assets/illustration/female-martyrs-of-the-july-uprising.webp",
     featured: true,
     featuredRank: 1,
-    label:
+    featuredLabel:
       "Commissioned by Ministry of Women & Children Affairs, Govt. of Bangladesh",
     images: [
       {
@@ -84,13 +84,13 @@ const projects = [
   {
     title: "Hey siri_",
     category: "Illustration",
-    asset: "assets/illustration/hey-siri.webp",
+    cover: "assets/illustration/hey-siri.webp",
     images: [{ src: "assets/illustration/hey-siri.webp", layout: "half" }],
   },
   {
     title: "Home of Homeless",
     category: "Illustration",
-    asset: "assets/illustration/home-of-homeless.webp",
+    cover: "assets/illustration/home-of-homeless.webp",
     images: [
       { src: "assets/illustration/home-of-homeless.webp", layout: "half" },
     ],
@@ -98,19 +98,19 @@ const projects = [
   {
     title: "Illustration",
     category: "Illustration",
-    asset: "assets/illustration/illustration.webp",
+    cover: "assets/illustration/illustration.webp",
     images: [{ src: "assets/illustration/illustration.webp", layout: "half" }],
   },
   {
     title: "Indipendence",
     category: "Illustration",
-    asset: "assets/illustration/indipendence.webp",
+    cover: "assets/illustration/indipendence.webp",
     images: [{ src: "assets/illustration/indipendence.webp", layout: "half" }],
   },
   {
     title: "MIST",
     category: "Illustration",
-    asset: "assets/illustration/mist-rag-yello-grid-01.webp",
+    cover: "assets/illustration/mist-rag-yello-grid-01.webp",
     images: [
       {
         src: "assets/illustration/mist-rag-yello-grid-01.webp",
@@ -125,7 +125,7 @@ const projects = [
   {
     title: "Pretty Ferris Wheel",
     category: "Illustration",
-    asset: "assets/illustration/pretty-ferris-wheel.webp",
+    cover: "assets/illustration/pretty-ferris-wheel.webp",
     images: [
       { src: "assets/illustration/pretty-ferris-wheel.webp", layout: "full" },
     ],
@@ -133,13 +133,13 @@ const projects = [
   {
     title: "Qurbani",
     category: "Illustration",
-    asset: "assets/illustration/qurbani.webp",
+    cover: "assets/illustration/qurbani.webp",
     images: [{ src: "assets/illustration/qurbani.webp", layout: "full" }],
   },
   {
     title: "Roof and sunset",
     category: "Illustration",
-    asset: "assets/illustration/roof-and-sunset.webp",
+    cover: "assets/illustration/roof-and-sunset.webp",
     images: [
       { src: "assets/illustration/roof-and-sunset.webp", layout: "half" },
     ],
@@ -147,16 +147,16 @@ const projects = [
   {
     title: "The Unwanted",
     category: "Illustration",
-    asset: "assets/illustration/the-unwanted.webp",
+    cover: "assets/illustration/the-unwanted.webp",
     images: [{ src: "assets/illustration/the-unwanted.webp", layout: "half" }],
   },
   {
     title: "Vashani-Parishad",
     category: "Illustration",
-    asset: "assets/illustration/vashani-parishad-img-0285.webp",
+    cover: "assets/illustration/vashani-parishad-img-0285.webp",
     featured: true,
     featuredRank: 6,
-    label: "Worked For _Vashani Parishad_",
+    featuredLabel: "Worked For _Vashani Parishad_",
     images: [
       {
         src: "assets/illustration/vashani-parishad-img-0285.webp",
@@ -171,7 +171,7 @@ const projects = [
   {
     title: "Automobile Business",
     category: "Graphic Design",
-    asset: "assets/graphic-design/automobile-business-insight-1.webp",
+    cover: "assets/graphic-design/automobile-business-insight-1.webp",
     images: [
       {
         src: "assets/graphic-design/automobile-business-insight-1.webp",
@@ -210,10 +210,10 @@ const projects = [
   {
     title: "Bihanga Puran",
     category: "Graphic Design",
-    asset: "assets/graphic-design/bihanga-puran.webp",
+    cover: "assets/graphic-design/bihanga-puran.webp",
     featured: true,
     featuredRank: 5,
-    label: "Featured in _Bihanga Puran - A Non-political Film About Birds",
+    featuredLabel: "Featured in _Bihanga Puran - A Non-political Film About Birds",
     images: [
       { src: "assets/graphic-design/bihanga-puran.webp", layout: "half" },
     ],
@@ -221,7 +221,7 @@ const projects = [
   {
     title: "Deep Cut",
     category: "Graphic Design",
-    asset: "assets/graphic-design/deep-cut-byomkesh.webp",
+    cover: "assets/graphic-design/deep-cut-byomkesh.webp",
     images: [
       { src: "assets/graphic-design/deep-cut-byomkesh.webp", layout: "full" },
       { src: "assets/graphic-design/deep-cut-free-132.webp", layout: "full" },
@@ -231,7 +231,7 @@ const projects = [
   {
     title: "Dhaka nitro Cover 3-01",
     category: "Graphic Design",
-    asset: "assets/graphic-design/dhaka-nitro-cover-3-01.webp",
+    cover: "assets/graphic-design/dhaka-nitro-cover-3-01.webp",
     images: [
       {
         src: "assets/graphic-design/dhaka-nitro-cover-3-01.webp",
@@ -242,7 +242,7 @@ const projects = [
   {
     title: "independence day 2026 copy",
     category: "Graphic Design",
-    asset: "assets/graphic-design/independence-day-2026-copy.webp",
+    cover: "assets/graphic-design/independence-day-2026-copy.webp",
     images: [
       {
         src: "assets/graphic-design/independence-day-2026-copy.webp",
@@ -253,7 +253,7 @@ const projects = [
   {
     title: "MISTDS",
     category: "Graphic Design",
-    asset: "assets/graphic-design/mistds-pre-reg-form.webp",
+    cover: "assets/graphic-design/mistds-pre-reg-form.webp",
     images: [
       { src: "assets/graphic-design/mistds-pre-reg-form.webp", layout: "half" },
       { src: "assets/graphic-design/mistds-workshop.webp", layout: "half" },
@@ -262,7 +262,7 @@ const projects = [
   {
     title: "Mohiner ghora ghash khay 1",
     category: "Graphic Design",
-    asset: "assets/graphic-design/mohiner-ghora-ghash-khay-1.webp",
+    cover: "assets/graphic-design/mohiner-ghora-ghash-khay-1.webp",
     images: [
       {
         src: "assets/graphic-design/mohiner-ghora-ghash-khay-1.webp",
@@ -273,7 +273,7 @@ const projects = [
   {
     title: "Studio Dhaanch",
     category: "Graphic Design",
-    asset: "assets/graphic-design/studio-dhaanch-3.webp",
+    cover: "assets/graphic-design/studio-dhaanch-3.webp",
     images: [
       { src: "assets/graphic-design/studio-dhaanch-3.webp", layout: "full" },
       {
@@ -285,7 +285,7 @@ const projects = [
   {
     title: "Jim Carey",
     category: "Caricatures and Portraits",
-    asset: "assets/caricatures-and-portraits/jim-carey.webp",
+    cover: "assets/caricatures-and-portraits/jim-carey.webp",
     images: [
       {
         src: "assets/caricatures-and-portraits/jim-carey.webp",
@@ -296,7 +296,7 @@ const projects = [
   {
     title: "leo dicaprio",
     category: "Caricatures and Portraits",
-    asset: "assets/caricatures-and-portraits/leo-dicaprio.webp",
+    cover: "assets/caricatures-and-portraits/leo-dicaprio.webp",
     images: [
       {
         src: "assets/caricatures-and-portraits/leo-dicaprio.webp",
@@ -307,7 +307,7 @@ const projects = [
   {
     title: "Oishy Sarjil",
     category: "Caricatures and Portraits",
-    asset: "assets/caricatures-and-portraits/oishy-sarjil.webp",
+    cover: "assets/caricatures-and-portraits/oishy-sarjil.webp",
     images: [
       {
         src: "assets/caricatures-and-portraits/oishy-sarjil.webp",
@@ -318,7 +318,7 @@ const projects = [
   {
     title: "Safwan and Konthy",
     category: "Caricatures and Portraits",
-    asset: "assets/caricatures-and-portraits/safwan-and-konthy.webp",
+    cover: "assets/caricatures-and-portraits/safwan-and-konthy.webp",
     images: [
       {
         src: "assets/caricatures-and-portraits/safwan-and-konthy.webp",
@@ -329,7 +329,7 @@ const projects = [
   {
     title: "Sketchbook Portraits",
     category: "Caricatures and Portraits",
-    asset:
+    cover:
       "assets/caricatures-and-portraits/sketchbook-portraits-1703076776788.webp",
     images: [
       {
@@ -345,54 +345,54 @@ const projects = [
   {
     title: "Equality 01_",
     category: "Cartoon",
-    asset: "assets/cartoon/equality-01.webp",
+    cover: "assets/cartoon/equality-01.webp",
     featured: true,
     featuredRank: 2,
-    label:
+    featuredLabel:
       "Exhibited and Featured in _Cartoons for Equality_ Prevent Violence against Women and Girls",
     images: [{ src: "assets/cartoon/equality-01.webp", layout: "full" }],
   },
   {
     title: "Equality 02",
     category: "Cartoon",
-    asset: "assets/cartoon/equality-02.webp",
+    cover: "assets/cartoon/equality-02.webp",
     images: [{ src: "assets/cartoon/equality-02.webp", layout: "full" }],
   },
   {
     title: "Extortion_",
     category: "Cartoon",
-    asset: "assets/cartoon/extortion.webp",
+    cover: "assets/cartoon/extortion.webp",
     images: [{ src: "assets/cartoon/extortion.webp", layout: "full" }],
   },
   {
     title: "Moving Forward",
     category: "Cartoon",
-    asset: "assets/cartoon/moving-forward.webp",
+    cover: "assets/cartoon/moving-forward.webp",
     images: [{ src: "assets/cartoon/moving-forward.webp", layout: "half" }],
   },
   {
     title: "Rosh+Alo",
     category: "Cartoon",
-    asset: "assets/cartoon/rosh-alo.webp",
+    cover: "assets/cartoon/rosh-alo.webp",
     featured: true,
     featuredRank: 4,
-    label: "Featured _Rosh+Alo_",
+    featuredLabel: "Featured _Rosh+Alo_",
     images: [{ src: "assets/cartoon/rosh-alo.webp", layout: "half" }],
   },
   {
     title: "Safety of Helmet",
     category: "Cartoon",
-    asset: "assets/cartoon/safety-of-helmet.webp",
+    cover: "assets/cartoon/safety-of-helmet.webp",
     featured: true,
     featuredRank: 3,
-    label:
+    featuredLabel:
       "Exhibited and Featured in _Safe থাকি, Safe রাখি (Safe Thaki, Safe Rakhi)_ Exhibition",
     images: [{ src: "assets/cartoon/safety-of-helmet.webp", layout: "half" }],
   },
   {
     title: "Wrong place, Wrong time",
     category: "Cartoon",
-    asset: "assets/cartoon/wrong-place-wrong-time.webp",
+    cover: "assets/cartoon/wrong-place-wrong-time.webp",
     images: [
       { src: "assets/cartoon/wrong-place-wrong-time.webp", layout: "half" },
     ],
@@ -400,7 +400,7 @@ const projects = [
   {
     title: "Hospital at Surma",
     category: "Architectural Illustration",
-    asset: "assets/architectural-illustration/hospital-at-surma-2.webp",
+    cover: "assets/architectural-illustration/hospital-at-surma-2.webp",
     images: [
       {
         src: "assets/architectural-illustration/hospital-at-surma-2.webp",
@@ -419,7 +419,7 @@ const projects = [
   {
     title: "Housing at sylhet",
     category: "Architectural Illustration",
-    asset: "assets/architectural-illustration/housing-at-sylhet.webp",
+    cover: "assets/architectural-illustration/housing-at-sylhet.webp",
     images: [
       {
         src: "assets/architectural-illustration/housing-at-sylhet.webp",
@@ -430,7 +430,7 @@ const projects = [
   {
     title: "The SM Barrack",
     category: "Architectural Illustration",
-    asset: "assets/architectural-illustration/the-sm-barrack-31.webp",
+    cover: "assets/architectural-illustration/the-sm-barrack-31.webp",
     images: [
       {
         src: "assets/architectural-illustration/the-sm-barrack-31.webp",
@@ -445,7 +445,7 @@ const projects = [
   {
     title: "TNT officials_ Housing at Motijheel",
     category: "Architectural Illustration",
-    asset:
+    cover:
       "assets/architectural-illustration/tnt-officials-housing-at-motijheel-1.webp",
     images: [
       {
@@ -465,7 +465,7 @@ const projects = [
   {
     title: "Commissioned Motion Graphics",
     category: "Animation",
-    asset:
+    cover:
       "assets/animation/commissioned-motion-graphics-52-lacs-rav4-cover.webp",
     images: [
       {
@@ -488,7 +488,7 @@ const projects = [
   {
     title: "Frame by Frame",
     category: "Animation",
-    asset: "assets/animation/frame-by-frame-cover.webp",
+    cover: "assets/animation/frame-by-frame-cover.webp",
     images: [
       {
         src: "assets/animation/frame-by-frame.mp4",
