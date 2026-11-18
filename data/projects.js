@@ -10,6 +10,18 @@ const projects = [
     images: [{ src: "assets/concept-arts/abandoned.webp", layout: "half" }],
   },
   {
+    title: "Abandoned02",
+    category: "Concept Arts",
+    cover: "assets/concept-arts/huha.webp",
+    images: [{ src: "assets/concept-arts/huha.webp", layout: "half" }],
+  },
+  {
+    title: "Moti & Jong-Bahadur",
+    category: "Concept Arts",
+    cover: "assets/concept-arts/Mirazul_Tanam.webp",
+    images: [{ src: "assets/concept-arts/Mirazul_Tanam.webp", layout: "half" }],
+  },
+  {
     title: "Boar",
     category: "Concept Arts",
     cover: "assets/concept-arts/boar.webp",
