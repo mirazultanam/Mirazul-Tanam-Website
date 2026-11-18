@@ -11,6 +11,7 @@ const aboutContent = {
       org: "Ministry of Women & Children Affairs, Govt. of Bangladesh",
     },
     { role: "Commissioned Illustrator", org: "Bihanga Puran (Film), Oxfam Bangladesh" },
+    { role: "Intern Architect", org: "| Goaat | Group of Architects and Thinkers" },
     { role: "Graphic Designer", org: "Cartoon People Studio" },
     {
       role: "Graphic Designer",
